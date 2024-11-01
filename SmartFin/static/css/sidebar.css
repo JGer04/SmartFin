@@ -1,0 +1,90 @@
+:root {
+  --sidebar-background: #3b3b3b;
+}
+
+.img-machape {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.gif-machape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  width: 50%;
+  height: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.contenedor:hover .img-machape {
+  opacity: 0;
+}
+
+.contenedor:hover .gif-machape {
+  opacity: 1;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.btn-sidebar {
+  position: absolute;
+  right: -15px;
+  top: 12px;
+  padding: 0.3rem;
+  font-size: 24px;
+  z-index: 1000;
+  background-color: transparent;
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-sidebar:hover {
+  background-color: var(--hover-color-light);
+}
+
+.hovernav {
+  border-bottom: 2px solid white;
+  transition: border-bottom 0.5s;
+}
+
+.hovernav:hover {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+#sideP {
+  position: relative;
+  margin: -30px;
+}
+
+#sidebar {
+  background-color: var(--sidebar-background);
+  width: 250px;
+  height: 100%;
+  transition: width 0.3s ease;
+  display: block;
+}
+
+.btn-sidebar {
+  position: absolute;
+  right: -35px;
+  top: 20px;
+  padding: 0.3rem;
+  font-size: 24px;
+  z-index: 1000;
+  background-color: transparent;
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

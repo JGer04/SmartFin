@@ -1,17 +1,115 @@
+:root {
+  --primary-color-1: #007bff;
+  --primary-color-1-light: #66b3ff;
+  --primary-color-1-dark: #0056b3;
 
+  --primary-color-2: #5bc0de;
+  --primary-color-2-light: #9cd9e6;
+  --primary-color-2-dark: #3a9bb8;
+
+  --secondary-color: #f0f0f0;
+  --secondary-color-light: #ffffff;
+  --secondary-color-dark: #d0d0d0;
+
+  --background-color: #e9ecef;
+  --background-color-light: #ffffff;
+  --background-color-dark: #d1d1d1;
+
+  --text-primary: #343a40;
+  --text-primary-light: #495057;
+  --text-primary-dark: #212529;
+
+  --text-light: #ffffff;
+
+  --hover-color: #0056b3;
+  --hover-color-light: #007bff;
+  --hover-color-dark: #004494;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e7ef;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
-main{
-    padding: 20px;
+
+main {
+  display: flex;
+  padding: 20px;
+  height: calc(100vh - 56px);
 }
-.container{
-    background-color: #a8c9ee;
-    padding: 20px;
-    border-radius: 8px;
-    
+
+/* aside {
+  background-color: var(--secondary-color-light);
+  padding: 20px;
+  color: var(--text-light);
+  min-width: 200px;
+  height: 100%;
+} */
+
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: var(--hover-color-light);
+}
+
+.list-group-item a {
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--primary-color-1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+p,
+li {
+  line-height: 1.6;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  transition: background-color 0.3s, color 0.3s;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  background-color: var(--hover-color-light);
+  color: var(--text-light);
+}
+
+.container {
+  background-color: var(--secondary-color-dark);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }

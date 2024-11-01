@@ -21,7 +21,7 @@ from django.shortcuts import render
 
 #Para renderizar la página de inicio
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 urlpatterns = [
     path('', index),
