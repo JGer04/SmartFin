@@ -1,9 +1,42 @@
-
 {% extends 'layout/base.html' %}
 {% load static %}
 
 {% block titulo %}Inicio{% endblock titulo %}
 
 {% block content %}
-<h1>HOLA</h1>
+<h1>SmartFin</h1>
+<p class="lead">Eslogan xD</p>
+
+<div class="row mt-4">
+    <a href="{% url 'lista_empresa' %}">
+        <div class="col-md-4">
+            <div class="card p-4 text-center">
+                <div class="icon mb-3">📂</div>
+                <h5>Empresas</h5>
+                <p>Gestión de empresas</p>
+            </div>
+    </a>
+
+</div>
+<div class="col-md-4">
+    <a href="{% url 'lista_balance' %}">
+        <div class="card p-4 text-center">
+            <div class="icon mb-3">📝</div>
+            <h5>Balances Generales</h5>
+            <p>Gestión de Balances</p>
+        </div>
+    </a>
+
+</div>
+<div class="col-md-4">
+    <a href="{% url 'lista_resultado' %}">
+        <div class="card p-4 text-center">
+            <div class="icon mb-3">✅</div>
+            <h5>Estados de Resultados</h5>
+            <p>Gestión de Estados de Resultados</p>
+        </div>
+    </a>
+</div>
+</div>
+
 {% endblock content %}

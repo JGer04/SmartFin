@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-        <h2 class="mb-4">Editar Empresa</h2>
+        <h2 class="mb-4">Crear Balance General</h2>
         
         <form method="post" class="p-5 shadow rounded bg-light">
             {% csrf_token %}
@@ -14,7 +14,7 @@
             <!-- Botones de acción -->
             <div class="d-flex justify-content">
                 <button type="submit" class="btn btn-success me-3 px-5">Guardar</button>  <!-- Botón más grande con 'btn-lg' y más ancho con 'px-5' -->
-                <a href="{% url 'lista_empresa' %}" class="btn btn-secondary px-5">Cancelar</a>
+                <a href="{% url 'lista_balance' %}" class="btn btn-secondary px-5">Cancelar</a>
             </div>
         </form>
 
@@ -30,3 +30,4 @@
             </div>
         {% endif %}
 {% endblock %}
+

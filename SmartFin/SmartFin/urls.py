@@ -27,7 +27,7 @@ def login(request):
     return render(request, 'login.html')
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='index'),
     path('login/', login),
     path('admin/', admin.site.urls),
     path('', include ('app.balance.urls')),
