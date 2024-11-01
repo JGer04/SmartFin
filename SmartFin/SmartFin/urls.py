@@ -23,11 +23,16 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'home.html')
 
+def login(request):
+    return render(request, 'login.html')
+
 urlpatterns = [
     path('', index),
+    path('login/', login),
     path('admin/', admin.site.urls),
     path('', include ('app.balance.urls')),
-    path('', include ('app.cuenta.urls')),
+    path('', include ('app.cuentaBalance.urls')),
+    path('', include ('app.cuentaResultado.urls')),
     path('', include ('app.empresa.urls')),
     path('', include ('app.resultado.urls')),
     path('', include ('app.usuario.urls')),

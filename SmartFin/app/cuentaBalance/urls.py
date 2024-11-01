@@ -1,5 +1,5 @@
 from django.urls import path
-from app.cuenta import views
+from app.cuentaBalance import views
 
 urlpatterns = [
     
