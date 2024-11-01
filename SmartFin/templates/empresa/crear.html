@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Crear Empresa</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="{% url 'lista_empresa' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+    {% if messages %}
+        <div class="alert alert-success mt-3">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

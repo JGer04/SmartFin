@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Confirmar eliminación de empresa</h2>
+        <p>¿Estás seguro de que deseas eliminar esta empresa?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="{% url 'lista_empresa' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}
