@@ -1,3 +1,4 @@
+
 :root {
   --primary-color-1: #007bff;
   --primary-color-1-light: #66b3ff;
@@ -112,4 +113,24 @@ li {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 100%;
+}
+
+.titulo-pagina{
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.card-body{
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.option-card a{
+  display: block;
+}
+
+.custom-icon {
+    width: 40%;
+    height: 6rem;
+    fill: currentColor; /* Opcional: usa el color actual del texto */
 }

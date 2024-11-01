@@ -2,8 +2,8 @@
 {% block titulo %}Balances{% endblock titulo %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Listado de todos los Balances Generales</h2>
+<div>
+    <h2 class="titulo-pagina">Listado de todos los Balances Generales</h2>
 </div>
 <a href="{% url 'crear_balance' %}" class="btn btn-primary">Crear nuevo balance</a><br><br>
 {% if messages %}
