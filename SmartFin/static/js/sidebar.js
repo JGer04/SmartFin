@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const icon = btnSidebar.querySelector("i");
 
   // Mostrar el sidebar inicialmente
-  sidebar.style.display = "block"; // Cambia esto a 'block' para que sea visible al inicio
+  sidebar.style.display = "none"; // Cambia esto a 'block' para que sea visible al inicio
 
   btnSidebar.addEventListener("click", function () {
     if (sidebar.style.display === "none") {

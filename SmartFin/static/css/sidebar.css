@@ -1,5 +1,29 @@
 :root {
-  --sidebar-background: #3b3b3b;
+  --primary-color-1: #007bff;
+  --primary-color-1-light: #66b3ff;
+  --primary-color-1-dark: #0056b3;
+
+  --primary-color-2: #5bc0de;
+  --primary-color-2-light: #9cd9e6;
+  --primary-color-2-dark: #3a9bb8;
+
+  --secondary-color: #f0f0f0;
+  --secondary-color-light: #ffffff;
+  --secondary-color-dark: #d0d0d0;
+
+  --background-color: #e9ecef;
+  --background-color-light: #ffffff;
+  --background-color-dark: #d1d1d1;
+
+  --grey-primary: #343a40;
+  --grey-primary-light: #495057c0;
+  --grey-primary-dark: #212529;
+
+  --text-light: #ffffff;
+
+  --hover-color: #0056b3;
+  --hover-color-light: #007bff;
+  --hover-color-dark: #004494;
 }
 
 .img-machape {
@@ -35,20 +59,6 @@
   z-index: 0;
 }
 
-.btn-sidebar {
-  position: absolute;
-  right: -15px;
-  top: 12px;
-  padding: 0.3rem;
-  font-size: 24px;
-  z-index: 1000;
-  background-color: transparent;
-  color: var(--text-light);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .btn-sidebar:hover {
   background-color: var(--hover-color-light);
 }
@@ -68,23 +78,23 @@
 }
 
 #sidebar {
-  background-color: var(--sidebar-background);
+  background-color: var(--grey-primary-light);
   width: 250px;
   height: 100%;
-  transition: width 0.3s ease;
-  display: block;
+  transition: width 1s ease;
+  display: none;
 }
 
 .btn-sidebar {
   position: absolute;
   right: -35px;
-  top: 20px;
+  top: 5px;
   padding: 0.3rem;
   font-size: 24px;
   z-index: 1000;
-  background-color: transparent;
+  background-color: var(--primary-color-1-light);
   color: var(--text-light);
-  border: none;
+  border: var(--grey-primary-dark) solid 0.5px;
   border-radius: 5px;
   cursor: pointer;
 }
