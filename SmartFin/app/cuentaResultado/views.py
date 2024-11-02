@@ -5,6 +5,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from app.cuentaResultado.forms import CuentaResultadoForm
+import pandas as pd
+from django.http import HttpResponse
 
 # Create your views here.
 def detalleResultado(request,id_resultado):
@@ -39,3 +41,20 @@ class crearCuenta(CreateView):
         resultado = get_object_or_404(Resultado, pk=id_resultado)
         context['resultado'] = resultado
         return context
+    
+def cargar_excel_cuentas(request, id_resultado):
+    if request.method == 'POST':
+        archivo_excel = request.FILES['archivo_excel']
+        resultado = get_object_or_404(Resultado, pk=id_resultado)
+        
+        df = pd.read_excel(archivo_excel)
+        for index, row in df.iterrows():
+            CuentaResultado.objects.create(
+                idResultado=resultado,
+                nombre=row['nombre'],
+                monto=row['monto'],
+                tipoCuenta=row['tipoCuenta']
+            )
+        return redirect('detalle_cuenta_resultado', id_resultado=resultado.id)
+
+    return render(request, 'cuentaResultado/cargar_excel.html', {'resultado_id': id_resultado})
