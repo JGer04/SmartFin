@@ -5,8 +5,8 @@
 <div>
     <h2 class="titulo-pagina">Listado de todos los Balances Generales</h2>
 </div>
-<a href="{% url 'crear_balance' %}" class="btn btn-primary">Crear nuevo balance</a>
-<a href="{% url 'index' %}" class="btn btn-secondary">Volver a inicio</a>
+<a href="{% url 'crear_balance' %}" class="btn btn-primary me-3">Crear nuevo balance</a>
+<a href="{% url 'index' %}" class="btn btn-secondary px-5">Volver a inicio</a>
 <br><br>
 {% if messages %}
 <div class="mb-3">
@@ -31,6 +31,7 @@
             </tr>
         </thead>
         <tbody>
+            {% if balances %}
             {% for balance in balances %}
             <tr>
                 <td> {{ forloop.counter }}</td>
@@ -38,12 +39,17 @@
                 <td>{{ balance.idEmpresa }}</td>
                 <td>{{ balance.fecha }}</td>
                 <td>
-                    <a href="#" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'detalle_cuenta_balance' balance.idBalance %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
                     <a href="{% url 'editar_balance' balance.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
                     <a href="{% url 'eliminar_balance' balance.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
             {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="5" class="text-center"><strong>No hay balances registrados</strong></td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>

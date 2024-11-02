@@ -1,0 +1,64 @@
+{% extends 'layout/base.html' %}
+
+{% block titulo %}Detalle balance{% endblock titulo %}
+
+{% block content %}
+<h2 class="mb-4 titulo-pagina">Detalle del Balance General</h2>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="mensaje"><strong>Empresa:</strong> {{ balance.idEmpresa }}</p>
+        <p><strong>Nombre:</strong> {{ balance.nombre }}</p>
+        <p><strong>Fecha:</strong> {{ balance.fecha }}</p>
+    </div>
+</div>
+{% if messages %}
+            <div class="mt-4">
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+<!-- Tabla de cuentas asociadas al balance -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white">
+        <h4>Cuentas Asociadas</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Monto ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if cuentas %}
+                    {% for cuenta in cuentas %}
+                        <tr>
+                            <td>{{ cuenta.codigo }}</td>
+                            <td>{{ cuenta.nombre }}</td>
+                            <td>{{ cuenta.monto }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center">No hay cuentas asociadas a este balance.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="d-flex justify-content">
+    <a href="{% url 'crear_cuenta_balance' balance.idBalance %}" class="btn btn-success me-3 px-5">Crear cuenta</a>
+    <a href="{% url 'lista_balance' %}" class="btn btn-secondary px-5">Regresar</a>
+</div>
+
+
+{% endblock content %}

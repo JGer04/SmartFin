@@ -1,8 +1,10 @@
 {% extends 'layout/base.html' %}
-{% block titulo %}Crear balance{% endblock titulo %}
+{% block titulo %}Crear cuenta{% endblock titulo %}
 
 {% block content %}
-        <h2 class="mb-4 titulo-pagina">Crear Balance General</h2>
+        <h2 class="mb-4 titulo-pagina">Crear cuenta para Estado de Resultado</h2>
+        <p class="mensaje">Detalle del E. Resultado: <strong>{{ resultado.nombre }}</strong></p>
+        <p class="mensaje">Empresa: <strong>{{ resultado.idEmpresa }}</strong></p>
         
         <form method="post" class="p-5 shadow rounded bg-light">
             {% csrf_token %}
@@ -15,20 +17,10 @@
             <!-- Botones de acción -->
             <div class="d-flex justify-content">
                 <button type="submit" class="btn btn-success me-3 px-5">Guardar</button>  <!-- Botón más grande con 'btn-lg' y más ancho con 'px-5' -->
-                <a href="{% url 'lista_balance' %}" class="btn btn-secondary px-5">Cancelar</a>
+                <a href="{% url 'lista_resultado' %}" class="btn btn-secondary px-5">Cancelar</a>
             </div>
         </form>
 
         <!-- Mensajes de Alerta -->
-        {% if messages %}
-            <div class="mt-4">
-                {% for message in messages %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
+        
 {% endblock %}
-

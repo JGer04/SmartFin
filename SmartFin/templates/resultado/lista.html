@@ -5,8 +5,8 @@
 <div>
     <h2 class="titulo-pagina">Listado de todos los Estados de Resultados</h2>
 </div>
-<a href="{% url 'crear_resultado' %}" class="btn btn-primary">Crear nuevo E. Resultado</a> 
-<a href="{% url 'index' %}" class="btn btn-secondary">Volver a inicio</a>
+<a href="{% url 'crear_resultado' %}" class="btn btn-primary me-3">Crear nuevo E. Resultado</a> 
+<a href="{% url 'index' %}" class="btn btn-secondary px-5">Volver a inicio</a>
 <br><br>
 {% if messages %}
 <div class="mb-3">
@@ -31,6 +31,7 @@
             </tr>
         </thead>
         <tbody>
+            {% if resultados %}
             {% for resultado in resultados %}
             <tr>
                 <td> {{ forloop.counter }}</td>
@@ -38,12 +39,17 @@
                 <td>{{ resultado.idEmpresa }}</td>
                 <td>{{ resultado.fecha }}</td>
                 <td>
-                    <a href="#" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'detalle_cuenta_resultado' resultado.idResultado %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
                     <a href="{% url 'editar_resultado' resultado.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
                     <a href="{% url 'eliminar_resultado' resultado.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
             {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="5" class="text-center"><strong>No hay E. Resultados registrados</strong></td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>

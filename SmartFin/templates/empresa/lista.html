@@ -5,8 +5,8 @@
 <div>
     <h2 class="titulo-pagina">Listado de todas las Empresas</h2>
 </div>
-<a href="{% url 'crear_empresa' %}" class="btn btn-primary">Crear nueva empresa</a>
-<a href="{% url 'index' %}" class="btn btn-secondary">Volver a inicio</a>
+<a href="{% url 'crear_empresa' %}" class="btn btn-primary me-3">Crear nueva empresa</a>
+<a href="{% url 'index' %}" class="btn btn-secondary px-5">Volver a inicio</a>
 <br><br>
 {% if messages %}
 <div class="mb-3">
@@ -32,6 +32,7 @@
             </tr>
         </thead>
         <tbody>
+            {% if empresas %}
             {% for empresa in empresas %}
             <tr>
                 <td> {{ forloop.counter }}</td>
@@ -46,6 +47,11 @@
                 </td>
             </tr>
             {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="6" class="text-center"><strong>No hay empresas registradas</strong></td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>

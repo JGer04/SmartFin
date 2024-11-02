@@ -1,8 +1,10 @@
 {% extends 'layout/base.html' %}
-{% block titulo %}Crear balance{% endblock titulo %}
+{% block titulo %}Crear cuenta{% endblock titulo %}
 
 {% block content %}
-        <h2 class="mb-4 titulo-pagina">Crear Balance General</h2>
+        <h2 class="mb-4 titulo-pagina">Crear cuenta para Balance General</h2>
+        <p class="mensaje">Detalle del Balance: <strong>{{ balance.nombre }}</strong></p>
+        <p class="mensaje">Empresa: <strong>{{ balance.idEmpresa }}</strong></p>
         
         <form method="post" class="p-5 shadow rounded bg-light">
             {% csrf_token %}
@@ -20,15 +22,5 @@
         </form>
 
         <!-- Mensajes de Alerta -->
-        {% if messages %}
-            <div class="mt-4">
-                {% for message in messages %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
+        
 {% endblock %}
-
