@@ -17,7 +17,7 @@
             <!-- Botones de acción -->
             <div class="d-flex justify-content">
                 <button type="submit" class="btn btn-success me-3 px-5">Guardar</button>  <!-- Botón más grande con 'btn-lg' y más ancho con 'px-5' -->
-                <a href="{% url 'lista_balance' %}" class="btn btn-secondary px-5">Cancelar</a>
+                <a href="{% url 'detalle_cuenta_balance' balance.idBalance %}" class="btn btn-secondary px-5">Regresar</a>
             </div>
         </form>
 

@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear cuenta{% endblock titulo %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h2 class="mb-4 titulo-pagina">Cargar cuentas para Estado de Resultado</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="mensaje">Detalle del E. Resultado: <strong>{{ resultado.nombre }}</strong></p>
+        <p class="mensaje">Empresa: <strong>{{ resultado.idEmpresa }}</strong></p>
+    </div>
+</div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <!-- Campo para Subir el Archivo -->
+                <div class="mb-3">
+                    <label for="archivo_excel" class="form-label">Selecciona el archivo Excel:</label>
+                    {{ form.archivo_excel|add_class:"form-control" }}
+                </div>
+            </div>
+                <!-- Botones de Acción -->
+                <div class="d-flex justify-content">
+                    <button type="submit" class="btn btn-success me-3 px-5">Subir Archivo</button>
+                    <a href="{% url 'detalle_cuenta_resultado' resultado.idResultado %}" class="btn btn-secondary px-5">Regresar</a> 
+                </div>
+            </form>
+        
+{% endblock %}

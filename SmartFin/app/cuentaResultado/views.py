@@ -7,6 +7,7 @@ from django.contrib import messages
 from app.cuentaResultado.forms import CuentaResultadoForm
 import pandas as pd
 from django.http import HttpResponse
+from .forms import ExcelUploadForm
 
 # Create your views here.
 def detalleResultado(request,id_resultado):
@@ -42,19 +43,31 @@ class crearCuenta(CreateView):
         context['resultado'] = resultado
         return context
     
-def cargar_excel_cuentas(request, id_resultado):
-    if request.method == 'POST':
-        archivo_excel = request.FILES['archivo_excel']
-        resultado = get_object_or_404(Resultado, pk=id_resultado)
-        
-        df = pd.read_excel(archivo_excel)
-        for index, row in df.iterrows():
-            CuentaResultado.objects.create(
-                idResultado=resultado,
-                nombre=row['nombre'],
-                monto=row['monto'],
-                tipoCuenta=row['tipoCuenta']
-            )
-        return redirect('detalle_cuenta_resultado', id_resultado=resultado.id)
+def cargar_cuentas_excel(request, id_resultado):
+    resultado = get_object_or_404(Resultado, pk=id_resultado)
 
-    return render(request, 'cuentaResultado/cargar_excel.html', {'resultado_id': id_resultado})
+    if request.method == "POST":
+        form = ExcelUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            archivo_excel = request.FILES['archivo_excel']
+            
+            # Lee el archivo Excel
+            df = pd.read_excel(archivo_excel, engine='openpyxl')
+            
+            # Filtrar filas válidas donde el código es numérico
+            for _, row in df.iterrows():
+                if pd.notnull(row['codigo']) and pd.notnull(row['nombre']):
+                    # Crea la cuenta balance
+                    CuentaResultado.objects.create(
+                        idResultado=resultado,
+                        codigo=row['codigo'],
+                        nombre=row['nombre'][:50],  # Trunca a 50 caracteres si es necesario
+                        monto=row['monto'] if pd.notnull(row['monto']) else 0.0  # Maneja montos nulos
+                    )
+            
+            return redirect('detalle_cuenta_resultado', id_resultado=id_resultado)
+
+    else:
+        form = ExcelUploadForm()
+
+    return render(request, 'cuentaResultado/cargar_excel.html', {'form': form, 'resultado': resultado})

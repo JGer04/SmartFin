@@ -16,3 +16,6 @@ class CuentaBalanceForm(forms.ModelForm):
             'nombre':forms.TextInput(attrs={'placeholder':'Nombre de la cuenta'}),
             'monto':forms.NumberInput(attrs={'placeholder':'Monto de la cuenta'})
         }
+
+class ExcelUploadForm(forms.Form):
+    archivo_excel = forms.FileField(label="Selecciona el archivo Excel")
