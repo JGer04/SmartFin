@@ -5,7 +5,8 @@
 <div>
     <h2 class="titulo-pagina">Listado de todas las Empresas</h2>
 </div>
-<a href="{% url 'crear_empresa' %}" class="btn btn-primary">Crear nueva empresa</a><br><br>
+<a href="{% url 'crear_empresa' %}" class="btn btn-primary">Crear nueva empresa</a>
+<a href="{% url 'index' %}" class="btn btn-secondary">Volver a inicio</a>
 {% if messages %}
 <div class="mb-3">
     {% for message in messages %}

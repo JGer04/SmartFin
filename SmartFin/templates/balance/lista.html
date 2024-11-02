@@ -5,7 +5,8 @@
 <div>
     <h2 class="titulo-pagina">Listado de todos los Balances Generales</h2>
 </div>
-<a href="{% url 'crear_balance' %}" class="btn btn-primary">Crear nuevo balance</a><br><br>
+<a href="{% url 'crear_balance' %}" class="btn btn-primary">Crear nuevo balance</a>
+<a href="{% url 'index' %}" class="btn btn-secondary">Volver a inicio</a>
 {% if messages %}
 <div class="mb-3">
     {% for message in messages %}
