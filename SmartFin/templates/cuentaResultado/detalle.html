@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %}
-
+{% load humanize %}
 {% block titulo %}Detalle E. Resultado{% endblock titulo %}
 
 {% block content %}
@@ -42,7 +42,7 @@
                         <tr>
                             <td>{{ cuenta.codigo }}</td>
                             <td>{{ cuenta.nombre }}</td>
-                            <td>{{ cuenta.monto }}</td>
+                            <td>{{ cuenta.monto|intcomma }}</td>
                         </tr>
                     {% endfor %}
                 {% else %}

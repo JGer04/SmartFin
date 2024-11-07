@@ -1,0 +1,97 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block titulo %}Calcular{% endblock titulo %}
+
+{% block content %}
+<h2 class="text-center mb-4">Resultados de Análisis</h2>
+
+    <!-- Formulario de selección -->
+    <form method="POST" action="{% url 'calcular_analisis_balance' %}">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="empresa1" class="form-label">Empresa 1:</label>
+                <select name="empresa1" id="empresa1" class="form-select" required>
+                    <option value="">Seleccione una empresa</option>
+                    {% for empresa in empresas %}
+                        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="balance1" class="form-label">Balance Empresa 1:</label>
+                <select name="balance1" id="balance1" class="form-select" required>
+                    <option value="">Seleccione un balance</option>
+                    {% for balance in balances %}
+                        <option value="{{ balance.idBalance }}">{{ balance.nombre }} - {{ balance.fecha }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="empresa2" class="form-label">Empresa 2:</label>
+                <select name="empresa2" id="empresa2" class="form-select" required>
+                    <option value="">Seleccione una empresa</option>
+                    {% for empresa in empresas %}
+                        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="balance2" class="form-label">Balance Empresa 2:</label>
+                <select name="balance2" id="balance2" class="form-select" required>
+                    <option value="">Seleccione un balance</option>
+                    {% for balance in balances %}
+                        <option value="{{ balance.idBalance }}">{{ balance.nombre }} - {{ balance.fecha }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </div>
+    </form>
+
+    <!-- Mensajes de error -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger mt-3">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Resultados del Análisis -->
+    {% if analisis %}
+        <div class="mt-5">
+            <h3 class="text-center">Resultados del Análisis Comparativo</h3>
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cuenta</th>
+                        <th>Monto Empresa 1</th>
+                        <th>Vertical Empresa 1 (%)</th>
+                        <th>Monto Empresa 2</th>
+                        <th>Vertical Empresa 2 (%)</th>
+                        <th>Análisis Horizontal (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in analisis %}
+                        <tr>
+                            <td>{{ item.cuenta }}</td>
+                            <td>{{ item.monto_empresa1|intcomma }}</td>
+                            <td>{{ item.vertical_empresa1|floatformat:2 }}%</td>
+                            <td>{{ item.monto_empresa2|intcomma }}</td>
+                            <td>{{ item.vertical_empresa2|floatformat:2 }}%</td>
+                            <td>{{ item.horizontal|floatformat:2 }}%</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+    
+{% endblock content %}
+    
