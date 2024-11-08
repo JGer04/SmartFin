@@ -73,8 +73,11 @@
 }
 
 #sideP {
-  position: relative;
+  position: fixed;
   margin: -30px;
+  margin-top: 20px;
+
+
 }
 
 #sidebar {
@@ -83,11 +86,12 @@
   height: 100%;
   transition: width 1s ease;
   display: none;
+
 }
 
 .btn-sidebar {
   position: absolute;
-  right: -35px;
+  right: -25px;
   top: 5px;
   padding: 0.3rem;
   font-size: 24px;

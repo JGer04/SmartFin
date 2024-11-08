@@ -8,5 +8,5 @@ urlpatterns = [
     path('balance/<int:pk>/',views.eliminarBalance.as_view(), name='eliminar_balance'),
 
     #path('balance/comparar/', views.compararEmpresa, name='comparar_analisis_balance'),
-    path('balance/calcular/', views.calcular_analisis, name='calcular_analisis_balance'),
+    path('balance/calcular', views.calcular_analisis, name='calcular_analisis_balance'),
 ]

@@ -8,11 +8,17 @@ from app.cuentaBalance.forms import CuentaBalanceForm
 import pandas as pd
 from django.http import HttpResponse
 from .forms import ExcelUploadForm
+from django.core.paginator import Paginator
 
 # Create your views here.
 def detalleBalance(request,id_balance):
     balance = get_object_or_404(Balance,pk=id_balance)
     cuentas = CuentaBalance.objects.filter(idBalance_id=id_balance)
+
+    paginator = Paginator(cuentas, 10)  # 15 cuentas por página
+    page_number = request.GET.get("page")
+    cuentas = paginator.get_page(page_number)
+    
     context = {
         'balance':balance,
         'cuentas':cuentas
@@ -44,7 +50,7 @@ class crearCuenta(CreateView):
         balance = get_object_or_404(Balance, pk=id_balance)
         context['balance'] = balance  # Pasar el balance al contexto
         return context
-    
+
 def cargar_cuentas_excel(request, id_balance):
     balance = get_object_or_404(Balance, pk=id_balance)
 
@@ -73,4 +79,3 @@ def cargar_cuentas_excel(request, id_balance):
         form = ExcelUploadForm()
 
     return render(request, 'cuentaBalance/cargar_excel.html', {'form': form, 'balance': balance})
-    
