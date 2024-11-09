@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear cuenta{% endblock titulo %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h2 class="mb-4 titulo-pagina">Cargar cuentas para Balance General</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="mensaje">Detalle del Balance: <strong>{{ balance.nombre }}</strong></p>
+        <p class="mensaje">Empresa: <strong>{{ balance.idEmpresa }}</strong></p>
+    </div>
+</div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Campo para Subir el Archivo -->
+                <div class="mb-3">
+                    <label for="hoja_seleccionada" class="form-label">Selecciona una hoja:</label>
+                    <select name="hoja_seleccionada" id="hoja_seleccionada" class="form-select" required>
+                        {% for hoja in hojas %}
+                            <option value="{{ hoja }}">{{ hoja }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="form-text mt-2">Elige la hoja que contiene las cuentas que deseas cargar.</div>
+                </div>
+            </div>
+                <!-- Botones de Acción -->
+                <div class="d-flex justify-content">
+                    <button type="submit" class="btn btn-success me-3 px-5">Cargar cuentas</button>
+                    <a href="{% url 'detalle_cuenta_balance' balance.idBalance %}" class="btn btn-secondary px-5">Regresar</a> 
+                </div>
+            </form>
+        
+{% endblock %}
