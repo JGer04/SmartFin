@@ -22,6 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  //Otras funciones
+  // Selecciona todas las celdas con la clase "no-numero"
+  const celdas = document.querySelectorAll(".no-numero");
+
+  celdas.forEach((celda) => {
+    // Verifica si el contenido de la celda no es un número
+    if (isNaN(parseFloat(celda.textContent.trim()))) {
+      // Si no es numérico, aplica la clase para cambiar el color a blanco
+      celda.classList.add("no-numero-blanco");
+      celda.parentElement.style.pointerEvents = "none";
+    }
+  });
+
+  //Fin
+});
+
 let gifElement = document.getElementById("gif");
 gifElement.style.backgroundImage = "url('https://i.gifer.com/1K9.gif')";
 
