@@ -26,9 +26,17 @@ def index(request):
 def login(request):
     return render(request, 'login.html')
 
+def menu_comparativo(request):
+    return render(request, 'menu_comparativo.html')
+
+def menu_individual(request):
+    return render(request, 'menu_individual.html')
+
 urlpatterns = [
     path('', index, name='index'),
     path('login/', login),
+    path('analisis-menu-comparativo', menu_comparativo, name = 'menu_comparativo'),
+    path('analisis-menu-individual', menu_individual, name = 'menu_individual'),
     path('admin/', admin.site.urls),
     path('', include ('app.balance.urls')),
     path('', include ('app.cuentaBalance.urls')),

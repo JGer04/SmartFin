@@ -1,0 +1,95 @@
+{% extends 'layout/base.html' %} 
+{% load humanize %} 
+{% block titulo %}Calcular{% endblock titulo %} 
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/analisis.css' %}">
+<h2 class="text-center mb-4">Resultados de Análisis</h2>
+
+<!-- Formulario de selección -->
+<form method="POST" action="{% url 'calcular_analisis_balance_individual' %}">
+  {% csrf_token %}
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="empresa">Seleccionar Empresa</label>
+      <select name="empresa" id="empresa" class="form-control" onchange="this.form.submit()">
+        <option value="">Seleccione una empresa</option>
+        {% for empresa in empresas %}
+          <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  {% if balances %}
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="balance1" class="form-label">Primer Balance</label>
+      <select name="balance1" id="balance1" class="form-select" required>
+        <option value="">Seleccione un balance</option>
+        {% for balance in balances %}
+          <option value="{{ balance.idBalance }}" {% if balance.idBalance == balance1_id %}selected{% endif %}>
+            {{ balance.nombre }} - {{ balance.fecha }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="balance2" class="form-label">Segundo Balance</label>
+      <select name="balance2" id="balance2" class="form-select" required>
+        <option value="">Seleccione otro balance</option>
+        {% for balance in balances %}
+          <option value="{{ balance.idBalance }}" {% if balance.idBalance == balance2_id %}selected{% endif %}>
+            {{ balance.nombre }} - {{ balance.fecha }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="text-left d-flex gap-2">
+    <button type="submit" class="btn btn-primary w-50">Calcular</button>
+    <a href="{% url 'menu_individual' %}" class="btn btn-secondary w-50">Volver</a>
+  </div>
+</form>
+
+<!-- Mensajes de error -->
+{% if messages %} 
+  {% for message in messages %}
+    <div class="alert alert-danger mt-3">{{ message }}</div>
+  {% endfor %} 
+{% endif %}
+
+<!-- Resultados del Análisis -->
+{% if analisis %}
+<!-- Contenedor con scroll para la tabla -->
+<div class="mt-2" style="max-height: 400px; overflow-y: auto">
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>Cuenta</th>
+        <th>Monto Balance 1</th>
+        <th>Vertical Balance 1 (%)</th>
+        <th>Monto Balance 2</th>
+        <th>Vertical Balance 2 (%)</th>
+        <th>Análisis Horizontal (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in analisis %}
+        <tr>
+          <td>{{ item.cuenta }}</td>
+          <td>{{ item.monto_empresa1|intcomma }}</td>
+          <td>{{ item.vertical_empresa1|floatformat:2 }}%</td>
+          <td>{{ item.monto_empresa2|intcomma }}</td>
+          <td>{{ item.vertical_empresa2|floatformat:2 }}%</td>
+          <td>{{ item.horizontal|floatformat:2 }}%</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %} 
+{% endblock content %}

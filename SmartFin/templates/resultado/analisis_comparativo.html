@@ -8,7 +8,7 @@
 <h2 class="text-center mb-4">Resultados de Análisis</h2>
 
 <!-- Formulario de selección -->
-<form method="POST" action="{% url 'calcular_analisis_balance' %}">
+<form method="POST" action="{% url 'calcular_analisis_resultado_comparativo' %}">
   {% csrf_token %}
   <div class="row mb-3">
     <div class="col-md-6">
@@ -21,12 +21,12 @@
       </select>
     </div>
     <div class="col-md-6">
-      <label for="balance1" class="form-label">Balance Empresa 1:</label>
-      <select name="balance1" id="balance1" class="form-select" required>
-        <option value="">Seleccione un balance</option>
-        {% for balance in balances %}
-        <option value="{{ balance.idBalance }}">
-          {{ balance.nombre }} - {{ balance.fecha }}
+      <label for="resultado1" class="form-label">E. Resultado Empresa 1:</label>
+      <select name="resultado1" id="resultado1" class="form-select" required>
+        <option value="">Seleccione un E. Resultado</option>
+        {% for resultado in resultados %}
+        <option value="{{ resultado.idResultado }}">
+          {{ resultado.nombre }} - {{ resultado.fecha }}
         </option>
         {% endfor %}
       </select>
@@ -44,12 +44,12 @@
       </select>
     </div>
     <div class="col-md-6">
-      <label for="balance2" class="form-label">Balance Empresa 2:</label>
-      <select name="balance2" id="balance2" class="form-select" required>
-        <option value="">Seleccione un balance</option>
-        {% for balance in balances %}
-        <option value="{{ balance.idBalance }}">
-          {{ balance.nombre }} - {{ balance.fecha }}
+      <label for="resultado2" class="form-label">B. Resultado Empresa 2:</label>
+      <select name="resultado2" id="resultado2" class="form-select" required>
+        <option value="">Seleccione un E. Resultado</option>
+        {% for resultado in resultados %}
+        <option value="{{ resultado.idResultado }}">
+          {{ resultado.nombre }} - {{ resultado.fecha }}
         </option>
         {% endfor %}
       </select>
@@ -58,7 +58,7 @@
 
   <div class="text-left d-flex gap-2">
     <button type="submit" class="btn btn-primary w-50">Calcular</button>
-    <a href="{% url 'lista_balance' %}" class="btn btn-secondary w-50">Volver</a>
+    <a href="{% url 'menu_comparativo' %}" class="btn btn-secondary w-50">Volver</a>
 </div>
 
 
