@@ -1,40 +1,31 @@
-"""
-URL configuration for SmartFin project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+from django.contrib.auth import logout, get_user_model, authenticate, login
 from django.contrib import admin
-from django.urls import path
 from django.urls import path, include
-from django.shortcuts import render
+from django.shortcuts import redirect,render
+from django.contrib.auth.decorators import login_required
 
 #Para renderizar la página de inicio
+@login_required
 def index(request):
     return render(request, 'home.html')
 
-def login(request):
-    return render(request, 'login.html')
+def exit(request):
+    logout(request)
+    return redirect('login')
 
+@login_required
 def menu_comparativo(request):
     return render(request, 'menu_comparativo.html')
 
+@login_required
 def menu_individual(request):
     return render(request, 'menu_individual.html')
 
 urlpatterns = [
     path('', index, name='index'),
-    path('login/', login),
+    #path('login/', login_v, name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('logout/', exit, name='exit'),
     path('analisis-menu-comparativo', menu_comparativo, name = 'menu_comparativo'),
     path('analisis-menu-individual', menu_individual, name = 'menu_individual'),
     path('admin/', admin.site.urls),
