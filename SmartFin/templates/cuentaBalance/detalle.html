@@ -48,7 +48,7 @@
                 {% if cuentas %}
                     {% for cuenta in cuentas %}
                         <tr>
-                            <td class="no-numero">{{ cuenta.codigo }}</td>
+                            <td>{{ cuenta.codigo }}</td>
                             <td>{{ cuenta.nombre }}</td>
                             <td>{{ cuenta.monto|intcomma }}</td>
                         </tr>
