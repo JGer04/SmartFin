@@ -1,0 +1,34 @@
+<!-- ratios/lista_razones.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Razones{% endblock titulo %}
+
+{% block content %}
+    <h2>Lista de Razones</h2>
+    <a href="{% url 'crear_razon' %}" class="btn btn-success">Crear Nueva Razón</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Sección</th>
+                <th>SubSección</th>
+                <th>Valor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for razon in razones %}
+            <tr>
+                <td>{{ razon.nombre }}</td>
+                <td>{{ razon.seccion.nombre }}</td>
+                <td>{{ razon.subseccion.nombre }}</td>
+                <td>{{ razon.valor }}</td>
+                <td>
+                    <a href="{% url 'editar_razon' razon.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{% url 'eliminar_razon' razon.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

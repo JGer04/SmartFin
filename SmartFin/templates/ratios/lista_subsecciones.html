@@ -1,0 +1,30 @@
+<!-- ratios/lista_subsecciones.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}secciones{% endblock titulo %}
+
+{% block content %}
+    <h2>Lista de Subsecciones</h2>
+    <a href="{% url 'crear_subseccion' %}" class="btn btn-success">Crear Nueva Subsección</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Sección Principal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subseccion in subsecciones %}
+            <tr>
+                <td>{{ subseccion.nombre }}</td>
+                <td>{{ subseccion.seccion.nombre }}</td>
+                <td>
+                    <a href="{% url 'editar_subseccion' subseccion.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{% url 'eliminar_subseccion' subseccion.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

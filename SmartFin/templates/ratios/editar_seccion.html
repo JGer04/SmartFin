@@ -1,0 +1,13 @@
+<!-- ratios/editar_seccion.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Editar seccion{% endblock titulo %}
+
+{% block content %}
+    <h2>Editar Sección</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+    <a href="{% url 'lista_secciones' %}">Volver a la lista de secciones</a>
+{% endblock %}

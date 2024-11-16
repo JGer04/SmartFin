@@ -1,0 +1,14 @@
+<!-- ratios/eliminar_subseccion.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Eliminar empresa{% endblock titulo %}
+
+{% block content %}
+    <h2>Eliminar Subsección</h2>
+    <p>¿Estás seguro de que quieres eliminar la subsección "{{ subseccion.nombre }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'lista_subsecciones' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

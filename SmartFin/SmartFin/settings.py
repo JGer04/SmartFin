@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'app.empresa',
     'app.resultado',
     'app.usuario',
+    'ratios',
     #Aplicaciones Externas
     'bootstrap5',
     'widget_tweaks',

@@ -35,4 +35,6 @@ urlpatterns = [
     path('', include ('app.empresa.urls')),
     path('', include ('app.resultado.urls')),
     path('', include ('app.usuario.urls')),
+    path('ratios/', include ('ratios.urls')),
+    
 ]

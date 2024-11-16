@@ -1,0 +1,28 @@
+<!-- ratios/lista_secciones.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}secciones{% endblock titulo %}
+
+{% block content %}
+    <h2>Lista de Secciones</h2>
+    <a href="{% url 'crear_seccion' %}" class="btn btn-success">Crear Nueva Sección</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seccion in secciones %}
+            <tr>
+                <td>{{ seccion.nombre }}</td>
+                <td>
+                    <a href="{% url 'editar_seccion' seccion.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{% url 'eliminar_seccion' seccion.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

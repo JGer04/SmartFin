@@ -1,0 +1,16 @@
+<!-- ratios/eliminar_seccion.html -->
+ <!-- ratios/eliminar_razon.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Eliminar empresa{% endblock titulo %}
+
+{% block content %}
+    <h2>Eliminar Sección</h2>
+    <p>¿Estás seguro de que quieres eliminar la sección "{{ seccion.nombre }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'lista_secciones' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}
+

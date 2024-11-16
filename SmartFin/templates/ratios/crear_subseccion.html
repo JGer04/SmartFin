@@ -1,0 +1,12 @@
+<!-- ratios/crear_subseccion.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear subseccion{% endblock titulo %}
+{% block content %}
+    <h2>Crear Subsección</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <a href="{% url 'lista_subsecciones' %}">Volver a la lista de subsecciones</a>
+{% endblock %}

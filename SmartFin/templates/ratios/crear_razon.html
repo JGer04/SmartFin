@@ -1,0 +1,11 @@
+<!-- ratios/crear_razon.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear razon{% endblock titulo %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <a href="{% url 'lista_razones' %}">Volver a la lista de razones</a>
+{% endblock %}

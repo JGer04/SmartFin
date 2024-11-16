@@ -1,0 +1,11 @@
+<!-- ratios/crear_seccion.html -->
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear seccion{% endblock titulo %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <a href="{% url 'lista_secciones' %}">Volver a la lista de secciones</a>
+{% endblock %}
