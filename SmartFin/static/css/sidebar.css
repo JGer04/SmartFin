@@ -16,7 +16,7 @@
   --background-color-dark: #d1d1d1;
 
   --grey-primary: #343a40;
-  --grey-primary-light: #495057c0;
+  --grey-primary-light: #1A1A19;
   --grey-primary-dark: #212529;
 
   --text-light: #ffffff;
@@ -35,12 +35,12 @@
 
 .gif-machape {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 70%;
+  left: 65%;
+  transform: translate(-70%, -70%);
   background-size: cover;
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -75,18 +75,15 @@
 #sideP {
   position: fixed;
   margin: -30px;
-  margin-top: 20px;
-
-
+  z-index: 1000;
 }
 
 #sidebar {
   background-color: var(--grey-primary-light);
   width: 250px;
   height: 100%;
-  transition: width 1s ease;
-  display: none;
-
+  transition: width 1s ease; /* Transición de tamaño del sidebar */
+  display: block; /* Asegura que sea visible inicialmente */
 }
 
 .btn-sidebar {

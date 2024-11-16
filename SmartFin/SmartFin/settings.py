@@ -55,7 +55,7 @@ ROOT_URLCONF = 'SmartFin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,10 +63,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.empresa.context_processors.empresas_context',  # Agregamos nuestro contexto personalizado
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'SmartFin.wsgi.application'
 
@@ -143,5 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index' #Se configura la página a la que se redirige al usuario después de hacer login
 LOGOUT_REDIRECT_URL = 'login' #Se configura la página a la que se redirige al usuario después de hacer logout
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 AUTH_USER_MODEL = 'usuario.Usuario' #Se cambia el modelo de usuario por defecto de Django por el modelo de usuario personalizado

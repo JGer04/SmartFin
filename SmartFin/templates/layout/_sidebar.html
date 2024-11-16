@@ -5,14 +5,22 @@
 <div id="sideP" class="d-flex vh-100 bg-light">
     <nav id="sidebar" class="container-fluid position-relative">
         <div class="col-12 h-auto contenedor" onclick="cambiarGif()">
-            <img src="{% static 'images/logo.png' %}" alt class="img-fluid img-machape">
+            <img src="{% static 'images/logo.png' %}" alt class="img-fluid img-machape mb-3 mt-3">
             <div class="gif-machape" id="gif"></div>
         </div>
 
         <div class="list-group text-light overflow-auto">
-            <a href="#" class="list-group-item list-group-item-action">Empresa 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Empresa 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Empresa 3</a>
+            {% if empresas %}
+                {% for empresa in empresas %}
+                    <a href="{% url 'detalle_empresa' empresa.pk %}" class="list-group-item list-group-item-action mt-2">{{ empresa.nombre }}</a>
+                {% endfor %}
+            {% else %}
+                <p class="list-group-item">No hay empresas registradas.</p>
+            {% endif %}
+        </div>
+
+        <div class="list-group text-light overflow-auto">
+            <a href="{% url 'lista_usuario' %}"  class="list-group-item list-group-item-action mt-2">Usuarios</a>
         </div>
     </nav>
 

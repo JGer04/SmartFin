@@ -12,7 +12,7 @@ class UsuarioManager(BaseUserManager):
         return self.create_user( password=password, **extra_fields)
 
 class Usuario(AbstractBaseUser):
-    id_usuario = models.CharField(max_length=2, primary_key=True)  # CHAR(2)
+    id_usuario = models.AutoField(primary_key=True)  # CHAR(2)
     nom_usuario = models.CharField(unique=True ,max_length=30)  # VARCHAR(30)
     password = models.CharField(max_length=128)  # CHAR(5)
     

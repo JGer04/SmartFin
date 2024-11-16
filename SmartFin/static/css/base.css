@@ -49,8 +49,8 @@ header {
 }
 
 .principal {
-  margin-left: 190px;
-  width: auto;
+  transition: margin-left 0.5s ease; /* Transición suave para el margen */
+  margin-left: 250px; /* Margen inicial si el sidebar está visible */
 }
 
 /* .content{

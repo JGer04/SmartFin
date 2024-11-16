@@ -1,6 +1,7 @@
 {% load static %}
-<nav class="navbar navbar-light bg-light justify-content-end">
-  <a class="navbar-brand" href="#">Navbar</a>
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}"> <!-- Archivo CSS -->
+
+<nav class="navbar navbar-light  justify-content-end" style="background-color: #B7B7B7;">
   <div>
     <ul class="navbar-nav flex-row">
       <li class="nav-item mx-2">
@@ -11,6 +12,13 @@
         <!-- Agregamos mx-2 para margen horizontal -->
         <a class="nav-link" href="{% url 'exit' %}">Cerrar Sesión</a>
       </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="{% url 'detalle_usuario' user.pk %}">
+         ¡Bienvenido!, {{ user.nom_usuario }}
+        </a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 </nav>

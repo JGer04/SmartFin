@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from app.empresa.models import *
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from app.empresa.forms import empresaForm
@@ -41,3 +41,7 @@ class eliminarEmpresa(DeleteView):
         messages.success(self.request,"Empresa eliminada exitosamente.")
         return super().form_valid(form)
 
+class detalleEmpresa(DetailView):
+    model = Empresa
+    template_name = 'empresa/detalle.html'
+    context_object_name = 'empresa'

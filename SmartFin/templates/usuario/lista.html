@@ -1,0 +1,54 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}usuarios{% endblock titulo %}
+
+{% block content %}
+<div>
+    <h2 class="titulo-pagina">Listado de todas las usuarios</h2>
+</div>
+<a href="{% url 'crear_usuario' %}" class="btn btn-primary me-3">Crear nueva usuario</a>
+<a href="{% url 'index' %}" class="btn btn-secondary px-5">Volver a inicio</a>
+<br><br>
+{% if messages %}
+<div class="mb-3">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if usuarios %}
+            {% for usuario in usuarios %}
+            <tr>
+                <td> {{ usuario.id_usuario }}</td>
+                <td>{{ usuario.nom_usuario }}</td>
+                <td>{{ usuario.password }}</td>
+                <td>
+                    <a href="{% url 'detalle_usuario' usuario.pk %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'editar_usuario' usuario.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
+                    <a href="{% url 'eliminar_usuario' usuario.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="6" class="text-center"><strong>No hay usuarios registrados</strong></td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

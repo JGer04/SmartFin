@@ -41,7 +41,7 @@
                 <td>{{ empresa.telefono }}</td>
                 <td>{{ empresa.sector }}</td>
                 <td>
-                    <a href="#" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'detalle_empresa' empresa.pk %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
                     <a href="{% url 'editar_empresa' empresa.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
                     <a href="{% url 'eliminar_empresa' empresa.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
