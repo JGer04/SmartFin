@@ -18,6 +18,7 @@ class Razon(models.Model):
     subseccion = models.ForeignKey(SubSeccion, on_delete=models.CASCADE, related_name='razones', null=True, blank=True)
     seccion = models.ForeignKey(Seccion, on_delete=models.CASCADE, related_name='razones', null=True, blank=True)
     valor = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    analisis = models.CharField(max_length=300, default="Sin análisis")
 
     def __str__(self):
         return self.nombre

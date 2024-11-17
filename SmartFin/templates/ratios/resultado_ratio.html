@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container mt-5">
         <h2 class="text-center">Resultado del Ratio</h2>
-        <table class="table table-bordered mt-4">
+        <table class="table table-bordered mt-4" id="tablaRazones">
             <tr>
                 <th>ID Balance</th>
                 <td>{{ id_balance }}</td>
@@ -15,6 +15,7 @@
                     <th>Sección</th>
                     <th>SubSección</th>
                     <th>Valor</th>
+                    <th>Analisis</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td>{{ razon.seccion.nombre }}</td>
                     <td>{{ razon.subseccion.nombre }}</td>
                     <td>{{ razon.valor }}</td>
+                    <td>{{ razon.analisis }}</td>
                     <td>
                         <a href="{% url 'editar_razon' razon.pk %}" class="btn btn-primary btn-sm">Editar</a>
                         <a href="{% url 'eliminar_razon' razon.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
@@ -35,4 +37,5 @@
         </table>
         <a href="{% url 'menu_cruds' %}" class="btn btn-secondary">Volver a la lista de ratios</a>
     </div>
+    
 {% endblock %}
