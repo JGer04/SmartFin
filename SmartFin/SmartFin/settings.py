@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'app.empresa.context_processors.empresas_context',  # Agregamos nuestro contexto personalizado
+                'app.usuario.context_processors.acceso_usuarios_context',
             ],
         },
     },

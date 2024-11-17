@@ -99,3 +99,38 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* Estilo para el texto "SmartFin" */
+.smartfin-title {
+  color: white; /* Color blanco */
+  font-size: 18px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilo para el divisor */
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider:before,
+.divider:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: white; /* Color blanco para la línea */
+}
+
+.divider-text {
+  color: white; /* Color del texto */
+  padding: 0 10px;
+  font-size: 14px; /* Tamaño de fuente */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: bold; /* Texto en negrita */
+  white-space: nowrap; /* Evita que el texto se corte */
+}
+

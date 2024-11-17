@@ -34,6 +34,7 @@
         <tbody>
             {% if empresas %}
             {% for empresa in empresas %}
+            {% if acceso.id_opcion.tipo_usuario == "AFM"  and empresa.sector == "Minería" %}
             <tr>
                 <td> {{ forloop.counter }}</td>
                 <td>{{ empresa.nombre }}</td>
@@ -46,6 +47,33 @@
                     <a href="{% url 'eliminar_empresa' empresa.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
+            {% elif acceso.id_opcion.tipo_usuario == "AFE" and empresa.sector == "Energía" %}
+            <tr>
+                    <td> {{ forloop.counter }}</td>
+                    <td>{{ empresa.nombre }}</td>
+                    <td>{{ empresa.direccion }}</td>
+                    <td>{{ empresa.telefono }}</td>
+                    <td>{{ empresa.sector }}</td>
+                    <td>
+                        <a href="{% url 'detalle_empresa' empresa.pk %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                        <a href="{% url 'editar_empresa' empresa.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
+                        <a href="{% url 'eliminar_empresa' empresa.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+             </tr>
+            {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+            <tr>
+                <td> {{ forloop.counter }}</td>
+                <td>{{ empresa.nombre }}</td>
+                <td>{{ empresa.direccion }}</td>
+                <td>{{ empresa.telefono }}</td>
+                <td>{{ empresa.sector }}</td>
+                <td>
+                    <a href="{% url 'detalle_empresa' empresa.pk %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'editar_empresa' empresa.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
+                    <a href="{% url 'eliminar_empresa' empresa.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endif %}
             {% endfor %}
             {% else %}
             <tr>

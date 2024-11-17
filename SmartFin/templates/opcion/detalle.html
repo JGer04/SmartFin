@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Crear opcion{% endblock titulo %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Opcion</title>
+</head>
+<body>
+    <h1>Detalles de la Opcion</h1>
+    <p><strong>ID:</strong> {{ opcion.id_opcion }}</p>
+    <p><strong>Descripción del permiso:</strong> {{ opcion.descripcion }}</p>
+    <p><strong>Código del permiso:</strong> {{ opcion.tipo_usuario }}</p>
+    <a href="{% url 'lista_opcion' %}">Volver a la lista</a>
+</body>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Eliminar opcion{% endblock titulo %}
+
+{% block content %}
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">Confirmar eliminación de la opcion</h2>
+            </div>
+            <div class="card-body">
+                <p class="mb-4">¿Estás seguro de que deseas eliminar esta opcion?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content">
+                        <button type="submit" class="btn btn-danger me-3 px-5">Eliminar</button>
+                        <a href="{% url 'lista_opcion' %}" class="btn btn-secondary px-5">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from app.usuario.models import Usuario
+from app.usuario.models import *
 
 class UsuarioForm(forms.ModelForm):
     password = forms.CharField(
@@ -25,3 +25,21 @@ class UsuarioForm(forms.ModelForm):
         if commit:
             usuario.save()
         return usuario
+
+class OpcionFormForm(forms.ModelForm):
+    class Meta:
+        model = OpcionForm
+        fields = ['descripcion', 'tipo_usuario']
+        widgets = {
+            'descripcion': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ingrese la descripción'
+            }),
+            'tipo_usuario': forms.Select(attrs={
+                'class': 'form-control'
+            })
+        }
+        labels = {
+            'descripcion': 'Descripción',
+            'tipo_usuario': 'Tipo de Usuario',
+        }

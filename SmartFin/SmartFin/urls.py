@@ -29,6 +29,7 @@ urlpatterns = [
     path('analisis-menu-comparativo', menu_comparativo, name = 'menu_comparativo'),
     path('analisis-menu-individual', menu_individual, name = 'menu_individual'),
     path('admin/', admin.site.urls),
+
     path('', include ('app.balance.urls')),
     path('', include ('app.cuentaBalance.urls')),
     path('', include ('app.cuentaResultado.urls')),

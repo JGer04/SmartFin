@@ -33,6 +33,7 @@
         <tbody>
             {% if resultados %}
             {% for resultado in resultados %}
+            {% if acceso.id_opcion.tipo_usuario == "AFM"  and resultado.idEmpresa.sector == "Minería" %}
             <tr>
                 <td> {{ forloop.counter }}</td>
                 <td>{{ resultado.nombre }}</td>
@@ -44,6 +45,31 @@
                     <a href="{% url 'eliminar_resultado' resultado.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
+            {% elif acceso.id_opcion.tipo_usuario == "AFE"  and resultado.idEmpresa.sector == "Energía" %}
+            <tr>
+                <td> {{ forloop.counter }}</td>
+                <td>{{ resultado.nombre }}</td>
+                <td>{{ resultado.idEmpresa }}</td>
+                <td>{{ resultado.fecha }}</td>
+                <td>
+                    <a href="{% url 'detalle_cuenta_resultado' resultado.idResultado %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'editar_resultado' resultado.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
+                    <a href="{% url 'eliminar_resultado' resultado.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+            <tr>
+                <td> {{ forloop.counter }}</td>
+                <td>{{ resultado.nombre }}</td>
+                <td>{{ resultado.idEmpresa }}</td>
+                <td>{{ resultado.fecha }}</td>
+                <td>
+                    <a href="{% url 'detalle_cuenta_resultado' resultado.idResultado %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
+                    <a href="{% url 'editar_resultado' resultado.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
+                    <a href="{% url 'eliminar_resultado' resultado.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endif %}
             {% endfor %}
             {% else %}
             <tr>

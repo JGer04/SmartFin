@@ -4,23 +4,55 @@
 
 <div id="sideP" class="d-flex vh-100 bg-light">
     <nav id="sidebar" class="container-fluid position-relative">
+        <!-- Logo -->
         <div class="col-12 h-auto contenedor" onclick="cambiarGif()">
             <img src="{% static 'images/logo.png' %}" alt class="img-fluid img-machape mb-3 mt-3">
             <div class="gif-machape" id="gif"></div>
         </div>
 
+        <!-- Texto "SmartFin" -->
+        <div class="text-center mt-3">
+            <h5 class="smartfin-title">SmartFin</h5>
+        </div>
+
+        {% if acceso.id_opcion.tipo_usuario == "ADM" %}
+        <!-- Divisor con texto -->
+        <div class="divider mt-3 mb-3 text-center">
+            <span class="divider-text">Opciones de Usuario</span>
+        </div>
+
+        <!-- Opción de usuarios -->
+        <div class="list-group text-light overflow-auto">
+            <a href="{% url 'lista_usuario' %}" class="list-group-item list-group-item-action mt-2">Usuarios</a>
+        </div>
+
+        <!-- Opción de usuarios -->
+        <div class="list-group text-light overflow-auto">
+            <a href="{% url 'lista_opcion' %}" class="list-group-item list-group-item-action mt-2">Permisos</a>
+        </div>
+        {% endif %}
+
+        <div class="divider mt-3 mb-3 text-center">
+            <span class="divider-text">Info. de Empresas</span>
+        </div>
+
+        <!-- Empresas -->
         <div class="list-group text-light overflow-auto">
             {% if empresas %}
                 {% for empresa in empresas %}
-                    <a href="{% url 'detalle_empresa' empresa.pk %}" class="list-group-item list-group-item-action mt-2">{{ empresa.nombre }}</a>
+                {% if acceso.id_opcion.tipo_usuario == "AFM" and empresa.sector == "Minería" %}
+                <a href="{% url 'detalle_empresa' empresa.pk %}" class="list-group-item list-group-item-action mt-2">{{ empresa.nombre }}</a>
+                {% elif acceso.id_opcion.tipo_usuario == "AFE" and empresa.sector == "Energía" %}
+                <a href="{% url 'detalle_empresa' empresa.pk %}" class="list-group-item list-group-item-action mt-2">{{ empresa.nombre }}</a>
+                {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+                <a href="{% url 'detalle_empresa' empresa.pk %}" class="list-group-item list-group-item-action mt-2">{{ empresa.nombre }}</a>
+
+                {% endif %}
                 {% endfor %}
             {% else %}
-                <p class="list-group-item">No hay empresas registradas.</p>
+                <h5 class="smartfin-title">No hay empresas registradas</h5>
             {% endif %}
-        </div>
-
-        <div class="list-group text-light overflow-auto">
-            <a href="{% url 'lista_usuario' %}"  class="list-group-item list-group-item-action mt-2">Usuarios</a>
+            <a href="{% url 'crear_empresa' %}" class="list-group-item list-group-item-action mt-2">Crear empresa</a>
         </div>
     </nav>
 
@@ -28,6 +60,5 @@
         <i class="bi bi-chevron-right"></i> <!-- Icono de Chevron Izquierdo -->
     </button>
 </div>
-
 
 <script src="{% static 'js/sidebar.js' %}"></script> <!-- Archivo JS -->

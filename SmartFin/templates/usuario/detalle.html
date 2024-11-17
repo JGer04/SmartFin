@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %}
-{% block titulo %}Crear usuario{% endblock titulo %}
+{% block titulo %}Detalles del Usuario{% endblock titulo %}
 
 {% block content %}
 <head>
@@ -10,8 +10,19 @@
 <body>
     <h1>Detalles del Usuario</h1>
     <p><strong>ID:</strong> {{ usuario.id_usuario }}</p>
-    <p><strong>Nombre de Usuario:</strong> {{ usuario.nom_usuario }}</p>
-    <p><strong>Contraseña (cifrada):</strong> {{ usuario.password }}</p>
+    <p><strong>Nombre:</strong> {{ usuario.nom_usuario }}</p>
+
+    <p>Opciones Asociadas:</p>
+    <ul>
+        {% if opciones %}
+        {% for opcion in opciones %}
+        <li>{{ opcion }}</li>
+        {% endfor %}
+        {% else %}
+        <li>No tiene opciones asociadas.</li>
+        {% endif %}
+    </ul>
+
     <a href="{% url 'lista_usuario' %}">Volver a la lista</a>
 </body>
 {% endblock %}

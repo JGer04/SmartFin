@@ -17,6 +17,5 @@ class empresaForm(forms.ModelForm):
             'nombre': forms.TextInput(attrs={'placeholder': 'Nombre de la empresa'}),
             'direccion': forms.TextInput(attrs={'placeholder': 'Dirección de la empresa'}),
             'telefono': forms.TextInput(attrs={'placeholder': 'Teléfono de la empresa'}),
-            'sector': forms.TextInput(attrs={'placeholder': 'Sector de la empresa'}),
-            
+            'sector': forms.Select(attrs={'class': 'form-control'})
         }

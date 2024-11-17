@@ -16,18 +16,37 @@
       <select name="empresa1" id="empresa1" class="form-select" required>
         <option value="">Seleccione una empresa</option>
         {% for empresa in empresas %}
+        {% if acceso.id_opcion.tipo_usuario == "AFM"  and empresa.sector == "Minería" %}
         <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% elif acceso.id_opcion.tipo_usuario == "AFE"  and empresa.sector == "Energía" %}
+        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% endif %}
         {% endfor %}
       </select>
     </div>
+    
     <div class="col-md-6">
       <label for="balance1" class="form-label">Balance Empresa 1:</label>
       <select name="balance1" id="balance1" class="form-select" required>
         <option value="">Seleccione un balance</option>
         {% for balance in balances %}
+        {% if acceso.id_opcion.tipo_usuario == "AFM"  and balance.idEmpresa.sector == "Minería" %}
         <option value="{{ balance.idBalance }}">
           {{ balance.nombre }} - {{ balance.fecha }}
         </option>
+        {% elif acceso.id_opcion.tipo_usuario == "AFE"  and balance.idEmpresa.sector == "Energía" %}
+
+        <option value="{{ balance.idBalance }}">
+          {{ balance.nombre }} - {{ balance.fecha }}
+        </option>
+        {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+
+        <option value="{{ balance.idBalance }}">
+          {{ balance.nombre }} - {{ balance.fecha }}
+        </option>
+        {% endif %}
         {% endfor %}
       </select>
     </div>
@@ -39,7 +58,13 @@
       <select name="empresa2" id="empresa2" class="form-select" required>
         <option value="">Seleccione una empresa</option>
         {% for empresa in empresas %}
+        {% if acceso.id_opcion.tipo_usuario == "AFM"  and empresa.sector == "Minería" %}
         <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% elif acceso.id_opcion.tipo_usuario == "AFE"  and empresa.sector == "Energía" %}
+        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+        <option value="{{ empresa.idEmpresa }}">{{ empresa.nombre }}</option>
+        {% endif %}
         {% endfor %}
       </select>
     </div>
@@ -48,9 +73,21 @@
       <select name="balance2" id="balance2" class="form-select" required>
         <option value="">Seleccione un balance</option>
         {% for balance in balances %}
+        {% if acceso.id_opcion.tipo_usuario == "AFM"  and balance.idEmpresa.sector == "Minería" %}
         <option value="{{ balance.idBalance }}">
           {{ balance.nombre }} - {{ balance.fecha }}
         </option>
+        {% elif acceso.id_opcion.tipo_usuario == "AFE"  and balance.idEmpresa.sector == "Energía" %}
+
+        <option value="{{ balance.idBalance }}">
+          {{ balance.nombre }} - {{ balance.fecha }}
+        </option>
+        {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+
+        <option value="{{ balance.idBalance }}">
+          {{ balance.nombre }} - {{ balance.fecha }}
+        </option>
+        {% endif %}
         {% endfor %}
       </select>
     </div>

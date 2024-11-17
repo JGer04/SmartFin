@@ -29,26 +29,28 @@ class Usuario(AbstractBaseUser):
 
 
 class OpcionForm(models.Model):
-    id_opcion = models.CharField(max_length=3, primary_key=True)  # CHAR(3)
-    des_opcion = models.CharField(max_length=30)  # VARCHAR(30)
-    num_form = models.IntegerField()  # INTEGER
-
-    class Meta:
-        managed = True
-        db_table = 'optionForm'
+    TIPO_USUARIO_CHOICES = [
+        ('ADM', 'Administrador'),
+        ('AFE', 'Analista Financiero del Área de Energía'),
+        ('AFM', 'Analista Financiero del Área de Minería'),
+    ]
+    id_opcion = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=30)
+    tipo_usuario = models.CharField(max_length=3, choices=TIPO_USUARIO_CHOICES, default='ADM')
 
     def __str__(self):
-        return self.des_opcion
+        return self.descripcion
 
 
 class AccesoUsuario(models.Model):
-    id_opcion = models.ForeignKey(OpcionForm, on_delete=models.CASCADE)  # FK hacia OpcionForm
-    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)  # FK hacia Usuario
+    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="accesos")
+    id_opcion = models.ForeignKey(OpcionForm, on_delete=models.CASCADE, related_name="accesos")
 
     class Meta:
-        managed = True
-        db_table = 'accesoUsuario'
-        unique_together = ('id_opcion', 'id_usuario')  # Llave compuesta
+        unique_together = ('id_usuario', 'id_opcion')
+        db_table = 'acceso_usuario'
 
     def __str__(self):
-        return f"{self.id_usuario} - {self.id_opcion}"
+        return f"{self.id_usuario} -> {self.id_opcion}"
+
+

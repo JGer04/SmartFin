@@ -16,8 +16,14 @@
       <select name="empresa" id="empresa" class="form-control" onchange="this.form.submit()">
         <option value="">Seleccione una empresa</option>
         {% for empresa in empresas %}
+        {% if acceso.id_opcion.tipo_usuario == "AFM"  and empresa.sector == "Minería" %}
           <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>
-        {% endfor %}
+        {% elif acceso.id_opcion.tipo_usuario == "AFE"  and empresa.sector == "Energía" %}
+        <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>
+        {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+        <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>´
+        {% endif %}
+          {% endfor %}
       </select>
     </div>
   </div>

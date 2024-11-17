@@ -1,12 +1,13 @@
 {% extends 'layout/base.html' %}
-{% block titulo %}usuarios{% endblock titulo %}
+{% block titulo %}Usuarios{% endblock titulo %}
 
 {% block content %}
 <div>
     <h2 class="titulo-pagina">Listado de todas las usuarios</h2>
 </div>
-<a href="{% url 'crear_usuario' %}" class="btn btn-primary me-3">Crear nueva usuario</a>
+<a href="{% url 'crear_usuario' %}" class="btn btn-primary me-3">Crear nuevo usuario</a>
 <a href="{% url 'index' %}" class="btn btn-secondary px-5">Volver a inicio</a>
+<a href="{% url 'asignar_acceso' %}" class="btn btn-secondary px-5">Asignar permisos</a>
 <br><br>
 {% if messages %}
 <div class="mb-3">
@@ -25,17 +26,25 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Contraseña</th>
+                <th>Tipo de usuario</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            {% if usuarios %}
-            {% for usuario in usuarios %}
+            {% if usuarios_con_opciones %}
+            {% for usuario, opciones in usuarios_con_opciones %}
             <tr>
-                <td> {{ usuario.id_usuario }}</td>
+                <td>{{ usuario.id_usuario }}</td>
                 <td>{{ usuario.nom_usuario }}</td>
-                <td>{{ usuario.password }}</td>
+                <td>
+                    <ul>
+                        {% for opcion in opciones %}
+                        <li>{{ opcion }}</li>
+                        {% empty %}
+                        <li>No tiene opciones asociadas</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td>
                     <a href="{% url 'detalle_usuario' usuario.pk %}" class="btn btn-info btn-sm text-white me-1">Detalles</a>
                     <a href="{% url 'editar_usuario' usuario.pk %}" class="btn btn-warning btn-sm me-1">Editar</a>
