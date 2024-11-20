@@ -1,0 +1,142 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Balances{% endblock titulo %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/graficos.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="central-container">
+        <h1>Gráficos de Cuentas</h1>
+        
+        <div class="horizontal-container">
+            <div class="form-group">
+                <label for="empresa">Seleccione una Empresa:</label>
+                <select id="empresa" class="custom-select">
+                    <option value="">Seleccione</option>
+                    {% for empresa in empresas %}
+                    {% if acceso.id_opcion.tipo_usuario == "AFM"  and empresa.sector == "Minería" %}
+                    <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>
+                    {% elif acceso.id_opcion.tipo_usuario == "AFE"  and empresa.sector == "Energía" %}
+                    <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>
+                    {% elif acceso.id_opcion.tipo_usuario == "ADM" %}
+                    <option value="{{ empresa.idEmpresa }}" {% if empresa.idEmpresa == empresa_seleccionada %}selected{% endif %}>{{ empresa.nombre }}</option>´
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="cuenta">Seleccione una Cuenta:</label>
+                <select id="cuenta" class="custom-select">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
+            
+            <button id="actualizar" class="custom-button" style="margin-top: 23px;">Actualizar Gráfico</button>
+        </div>
+        <canvas id="grafico" class="chart"></canvas>
+    </div>
+    
+
+    <script>
+        const ctx = document.getElementById('grafico').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Montos',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        const empresaSelect = document.getElementById('empresa');
+        const cuentaSelect = document.getElementById('cuenta');
+
+        // Actualiza las cuentas según la empresa seleccionada
+        empresaSelect.addEventListener('change', () => {
+        const empresaId = empresaSelect.value;
+
+        // Limpia las opciones existentes en el select de cuentas
+        cuentaSelect.innerHTML = '<option value="">Seleccione</option>';
+
+        if (empresaId) {
+            // Obtén las cuentas asociadas a la empresa seleccionada
+            fetch(`/obtener-cuentas/?empresa_id=${empresaId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const cuentasAgregadas = new Set(); // Conjunto para evitar duplicados
+
+                    if (data.cuentas_balance) {
+                        // Agrega las cuentas de balance
+                        data.cuentas_balance.forEach(cuenta => {
+                            if (!cuentasAgregadas.has(cuenta.nombre)) { // Verifica si ya está agregada
+                                const option = document.createElement('option');
+                                option.value = cuenta.idCuentaBalance;
+                                option.textContent = `[Balance] ${cuenta.nombre}`;
+                                option.setAttribute('data-tipo', 'balance');
+                                cuentaSelect.appendChild(option);
+                                cuentasAgregadas.add(cuenta.nombre); // Marca como agregada
+                            }
+                        });
+                    }
+
+                    if (data.cuentas_resultado) {
+                        // Agrega las cuentas de resultados
+                        data.cuentas_resultado.forEach(cuenta => {
+                            if (!cuentasAgregadas.has(cuenta.nombre)) { // Verifica si ya está agregada
+                                const option = document.createElement('option');
+                                option.value = cuenta.idCuentaResultado;
+                                option.textContent = `[Resultado] ${cuenta.nombre}`;
+                                option.setAttribute('data-tipo', 'resultado');
+                                cuentaSelect.appendChild(option);
+                                cuentasAgregadas.add(cuenta.nombre); // Marca como agregada
+                            }
+                        });
+                    }
+
+                    if (!data.cuentas_balance && !data.cuentas_resultado) {
+                        alert('No se encontraron cuentas asociadas a esta empresa.');
+                    }
+                })
+                .catch(error => console.error('Error al cargar cuentas:', error));
+        }
+    });
+
+
+        // Actualiza el gráfico cuando se seleccionan una empresa y una cuenta
+        document.getElementById('actualizar').addEventListener('click', () => {
+        const empresa = document.getElementById('empresa').value;
+        const cuenta = document.getElementById('cuenta').value;
+        const tipo = document.querySelector(`#cuenta option[value="${cuenta}"]`)?.getAttribute('data-tipo'); // Usar optional chaining
+
+        if (empresa && cuenta && tipo) {
+            fetch(`/obtener-datos/?cuenta_id=${cuenta}&tipo_cuenta=${tipo}&empresa_id=${empresa}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        chart.data.labels = Object.keys(data.datos);
+                        chart.data.datasets[0].data = Object.values(data.datos);
+                        chart.update();
+                    }
+                });
+        } else {
+            alert("Debe seleccionar una empresa, una cuenta y un tipo válido.");
+        }
+    });
+    </script>
+</body>
+{% endblock %}

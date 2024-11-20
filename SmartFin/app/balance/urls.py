@@ -10,4 +10,8 @@ urlpatterns = [
     #path('balance/comparar/', views.compararEmpresa, name='comparar_analisis_balance'),
     path('balance/analisis-comparativo', views.calcular_analisis_comparativo, name='calcular_analisis_balance_comparativo'),
     path('balance/analisis-individual', views.calcular_analisis_individual, name='calcular_analisis_balance_individual'),
+
+    path('graficos/', views.graficos_cuentas, name='graficos_cuentas'),
+    path('obtener-cuentas/', views.obtener_cuentas_por_empresa, name='obtener_cuentas_por_empresa'),
+    path('obtener-datos/', views.obtener_datos_cuenta, name='obtener_datos_cuenta'),
 ]

@@ -8,7 +8,101 @@ from app.empresa.models import Empresa
 from app.cuentaBalance.models import CuentaBalance
 from django.core.paginator import Paginator
 
+from app.cuentaBalance.models import *
+from app.cuentaResultado.models import *
+from app.empresa.models import *
+from app.resultado.models import *
+from .models import Balance
+
+from django.http import JsonResponse
+import datetime
+
 # Create your views here.
+
+def graficos_cuentas(request):
+    empresas = Empresa.objects.all()
+    return render(request, 'balance/graficos_cuentas.html', {'empresas': empresas})
+
+def obtener_cuentas_por_empresa(request):
+    empresa_id = request.GET.get('empresa_id')
+    if not empresa_id:
+        return JsonResponse({'error': 'ID de empresa no proporcionado'}, status=400)
+
+    try:
+        # Filtrar cuentas de balance por la empresa
+        cuentas_balance = CuentaBalance.objects.filter(
+            idBalance__idEmpresa=empresa_id
+        ).values('idCuentaBalance', 'nombre')
+
+        # Filtrar cuentas de resultados por la empresa
+        cuentas_resultado = CuentaResultado.objects.filter(
+            idResultado__idEmpresa=empresa_id
+        ).values('idCuentaResultado', 'nombre')
+
+        # Retornar ambas listas en la respuesta JSON
+        return JsonResponse({
+            'cuentas_balance': list(cuentas_balance),
+            'cuentas_resultado': list(cuentas_resultado),
+        })
+    except Empresa.DoesNotExist:
+        return JsonResponse({'error': 'Empresa no encontrada'}, status=404)
+
+def obtener_datos_cuenta(request):
+    cuenta_id = request.GET.get('cuenta_id')
+    tipo_cuenta = request.GET.get('tipo_cuenta')
+    empresa_id = request.GET.get('empresa_id')
+
+    print(f"cuenta_id: {cuenta_id}, tipo_cuenta: {tipo_cuenta}, empresa_id: {empresa_id}")
+
+    if not cuenta_id or not tipo_cuenta or not empresa_id:
+        return JsonResponse({'error': 'Faltan parámetros en la solicitud.'}, status=400)
+
+    datos_por_anio = {}
+
+    try:
+        if tipo_cuenta == 'balance':
+            # Obtener el código de la cuenta de balance
+            c_codigo = CuentaBalance.objects.get(idCuentaBalance=cuenta_id).codigo
+
+            # Filtrar datos relacionados usando el código y la empresa
+            datos = CuentaBalance.objects.filter(
+                codigo=c_codigo,
+                idBalance__idEmpresa=empresa_id
+            ).select_related('idBalance')
+
+            for dato in datos:
+                anio = dato.idBalance.fecha.year
+                datos_por_anio[anio] = datos_por_anio.get(anio, 0) + dato.monto
+
+        elif tipo_cuenta == 'resultado':
+            # Obtener el código de la cuenta de resultado
+            c_codigo = CuentaResultado.objects.get(idCuentaResultado=cuenta_id).codigo
+
+            # Filtrar datos relacionados usando el código y la empresa
+            datos = CuentaResultado.objects.filter(
+                codigo=c_codigo,
+                idResultado__idEmpresa=empresa_id
+            ).select_related('idResultado')
+
+            for dato in datos:
+                anio = dato.idResultado.fecha.year
+                datos_por_anio[anio] = datos_por_anio.get(anio, 0) + dato.monto
+
+        else:
+            return JsonResponse({'error': 'Tipo de cuenta no válido'}, status=400)
+
+        return JsonResponse({'datos': datos_por_anio})
+
+    except CuentaBalance.DoesNotExist:
+        return JsonResponse({'error': 'Cuenta de balance no encontrada.'}, status=404)
+
+    except CuentaResultado.DoesNotExist:
+        return JsonResponse({'error': 'Cuenta de resultado no encontrada.'}, status=404)
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return JsonResponse({'error': 'Ocurrió un error procesando los datos.'}, status=500)
+
 
 
 class listaBalance(ListView):

@@ -1,0 +1,87 @@
+/* Estilo para los selects */
+.custom-select {
+    width: 20%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    color: #495057;
+    appearance: none; /* Ocultar la flecha por defecto */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.custom-select:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Flecha personalizada */
+.custom-select::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    pointer-events: none;
+}
+
+/* Estilo para el botón */
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+.custom-button:active {
+    background-color: #003f7f;
+}
+
+/* Contenedor principal */
+.central-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contenedor horizontal para los elementos */
+.horizontal-container {
+    display: flex;
+    flex-direction: row; /* Organiza los elementos en fila */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espaciado entre elementos */
+    margin-top: 20px;
+}
+
+/* Estilo para cada grupo de formulario (label + select) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Ajustes para selects y botón */
+.custom-select,
+.custom-button {
+    width: 100%; /* Deja que el contenido determine el ancho */
+    max-width: 200px; /* Opcional: define un tamaño máximo */
+    padding: 10px;
+    font-size: 14px;
+}
+
+.chart {
+    width: 83%; /* Limita el ancho máximo a 600px */
+    height: 83%; /* Altura fija */
+    margin: 0 auto; /* Centra horizontalmente */
+}

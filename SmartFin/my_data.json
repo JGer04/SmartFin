@@ -1629,396 +1629,6 @@
 },
 {
   "model": "cuentaBalance.cuentabalance",
-  "pk": 81,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "11",
-    "nombre": "Activo Corriente",
-    "monto": 86214672.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 82,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1101",
-    "nombre": "Efectivo y Equivalentes de Efectivo",
-    "monto": 15892989.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 83,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1102",
-    "nombre": "Deudores comerciales y Otras Cuentas por Cobrar (N",
-    "monto": 53139563.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 84,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1103",
-    "nombre": "Cuentas por cobrar Empresas Relacionadas",
-    "monto": 688336.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 85,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1104",
-    "nombre": "Inversiones",
-    "monto": 101694.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 86,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1105",
-    "nombre": "Inventario (Materiales, Suministros, etc.)",
-    "monto": 7819095.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 87,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1106",
-    "nombre": "Pagos por Anticipado",
-    "monto": 976687.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 88,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1107",
-    "nombre": "Impuestos Corrientes",
-    "monto": 6798398.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 89,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1108",
-    "nombre": "Otros Activos financieros",
-    "monto": 797910.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 90,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "12",
-    "nombre": "Activo no Corriente",
-    "monto": 116565004.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 91,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1201",
-    "nombre": "Propiedades, Planta y Equipo (Neto)",
-    "monto": 103952405.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 92,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1202",
-    "nombre": "Activos por derechos de Uso(neto)",
-    "monto": 7236481.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 93,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1203",
-    "nombre": "Cuentas por cobrar a LP",
-    "monto": 541688.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 94,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1204",
-    "nombre": "Inversiones",
-    "monto": 888005.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 95,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "1205",
-    "nombre": "Activos intangibles",
-    "monto": 3946425.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 96,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "tc",
-    "nombre": "Total Activos",
-    "monto": 202779676.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 97,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "21",
-    "nombre": "Pasivo Corriente",
-    "monto": 87859756.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 98,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2101",
-    "nombre": "Acreedores comerciales y Otras Cuentas por Pagar",
-    "monto": 67540334.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 99,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2102",
-    "nombre": "Préstamos de Corto Plazo",
-    "monto": 6000000.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 100,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2103",
-    "nombre": "Porción de los Préstamos a Largo Plazo con vencimi",
-    "monto": 4364380.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 101,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2104",
-    "nombre": "Impuestos Corrientes.",
-    "monto": 5027614.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 102,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2105",
-    "nombre": "Provisiones",
-    "monto": 2688182.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 103,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2106",
-    "nombre": "Pasivos por arrendamientos",
-    "monto": 824955.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 104,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2107",
-    "nombre": "Otros Pasivos Financieros",
-    "monto": 1414291.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 105,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "22",
-    "nombre": "Pasivo No Corriente",
-    "monto": 77848939.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 106,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2201",
-    "nombre": "Préstamos y Otras Obligaciones Financieras",
-    "monto": 42375000.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 107,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2202",
-    "nombre": "Cuentas por Pagar Empresas Relacionadas",
-    "monto": 41700.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 108,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2203",
-    "nombre": "Impuestos Diferidos.",
-    "monto": 18198284.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 109,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2204",
-    "nombre": "Pasivos por arrendamientos.",
-    "monto": 7121735.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 110,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2205",
-    "nombre": "Otros Pasivos Financieros.",
-    "monto": 3041520.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 111,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "2206",
-    "nombre": "Provisiones.",
-    "monto": 7070700.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 112,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "tp",
-    "nombre": "Total Pasivos",
-    "monto": 165708695.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 113,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "3001",
-    "nombre": "Capital Social",
-    "monto": 12282292.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 114,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "3002",
-    "nombre": "Reserva Legal",
-    "monto": 7018453.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 115,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "3003",
-    "nombre": "Ganancias (Pérdidas) actuariales",
-    "monto": -1127770.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 116,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "3004",
-    "nombre": "Resultados Acumulados",
-    "monto": 11619579.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 117,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "3005",
-    "nombre": "Resultado del Período",
-    "monto": 7278428.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 118,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "tpa",
-    "nombre": "Total Patrimonio",
-    "monto": 37070982.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
-  "pk": 119,
-  "fields": {
-    "idBalance": 3,
-    "codigo": "Tpmpa",
-    "nombre": "Total Pasivo más Patrimonio",
-    "monto": 202779677.0
-  }
-},
-{
-  "model": "cuentaBalance.cuentabalance",
   "pk": 120,
   "fields": {
     "idBalance": 4,
@@ -4808,6 +4418,396 @@
   }
 },
 {
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 399,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "11",
+    "nombre": "Activo Corriente",
+    "monto": 91387553.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 400,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1101",
+    "nombre": "Efectivo y Equivalentes de Efectivo",
+    "monto": 16827298.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 401,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1102",
+    "nombre": "Deudores comerciales y Otras Cuentas por Cobrar (N",
+    "monto": 56337247.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 402,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1103",
+    "nombre": "Cuentas por cobrar Empresas Relacionadas",
+    "monto": 731636.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 403,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1104",
+    "nombre": "Inversiones",
+    "monto": 108429.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 404,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1105",
+    "nombre": "Inventario (Materiales, Suministros, etc.)",
+    "monto": 8308241.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 405,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1106",
+    "nombre": "Pagos por Anticipado",
+    "monto": 1035288.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 406,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1107",
+    "nombre": "Impuestos Corrientes",
+    "monto": 7302290.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 407,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1108",
+    "nombre": "Otros Activos Financieros",
+    "monto": 846185.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 408,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "12",
+    "nombre": "Activo no Corriente",
+    "monto": 123382174.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 409,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1201",
+    "nombre": "Propiedades, Planta y Equipo (Neto)",
+    "monto": 110189549.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 410,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1202",
+    "nombre": "Activos por derechos de Uso (Neto)",
+    "monto": 7816600.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 411,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1203",
+    "nombre": "Cuentas por cobrar a LP",
+    "monto": 581823.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 412,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1204",
+    "nombre": "Inversiones",
+    "monto": 957065.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 413,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "1205",
+    "nombre": "Activos intangibles",
+    "monto": 4212077.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 414,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "tc",
+    "nombre": "Total Activos",
+    "monto": 214769727.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 415,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "21",
+    "nombre": "Pasivo Corriente",
+    "monto": 93171739.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 416,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2101",
+    "nombre": "Acreedores comerciales y Otras Cuentas por Pagar",
+    "monto": 72943561.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 417,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2102",
+    "nombre": "Préstamos de Corto Plazo",
+    "monto": 6360000.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 418,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2103",
+    "nombre": "Porción de los Préstamos a Largo Plazo a corto pla",
+    "monto": 4682531.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 419,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2104",
+    "nombre": "Impuestos Corrientes",
+    "monto": 5429823.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 420,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2105",
+    "nombre": "Provisiones",
+    "monto": 2842872.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 421,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2106",
+    "nombre": "Pasivos por arrendamientos",
+    "monto": 890951.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 422,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2107",
+    "nombre": "Otros Pasivos Financieros",
+    "monto": 1527435.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 423,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "22",
+    "nombre": "Pasivo No Corriente",
+    "monto": 83076874.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 424,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2201",
+    "nombre": "Préstamos y Otras Obligaciones Financieras",
+    "monto": 45765000.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 425,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2202",
+    "nombre": "Cuentas por Pagar Empresas Relacionadas",
+    "monto": 44836.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 426,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2203",
+    "nombre": "Impuestos Diferidos",
+    "monto": 19634146.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 427,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2204",
+    "nombre": "Pasivos por arrendamientos",
+    "monto": 7691473.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 428,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2205",
+    "nombre": "Otros Pasivos Financieros",
+    "monto": 3284841.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 429,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "2206",
+    "nombre": "Provisiones",
+    "monto": 7635356.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 430,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "tp",
+    "nombre": "Total Pasivos",
+    "monto": 176248613.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 431,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "3001",
+    "nombre": "Capital Social",
+    "monto": 12800584.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 432,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "3002",
+    "nombre": "Reserva Legal",
+    "monto": 7389658.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 433,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "3003",
+    "nombre": "Ganancias (Pérdidas) actuariales",
+    "monto": -1195436.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 434,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "3004",
+    "nombre": "Resultados Acumulados",
+    "monto": 12316754.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 435,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "3005",
+    "nombre": "Resultado del Período",
+    "monto": 7922702.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 436,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "tpa",
+    "nombre": "Total Patrimonio",
+    "monto": 38521262.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 437,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "Tpmpa",
+    "nombre": "Total Pasivo más Patrimonio",
+    "monto": 214769727.0
+  }
+},
+{
   "model": "cuentaResultado.cuentaresultado",
   "pk": 1,
   "fields": {
@@ -6419,7 +6419,7 @@
   "model": "usuario.usuario",
   "pk": 1,
   "fields": {
-    "last_login": "2024-11-17T05:31:46.678Z",
+    "last_login": "2024-11-20T14:00:07.367Z",
     "nom_usuario": "Allan",
     "password": "pbkdf2_sha256$600000$WjM9hB57UvUaDmZ8i8HucB$6zRkq8JmOb7C0Vlu6uVkUqtV2pc9n/FQjJVzhzNIVes="
   }
@@ -6540,7 +6540,7 @@
     "id_usuario": 6,
     "id_opcion": 3
   }
-}
+},
 {
   "model": "ratios.seccion",
   "pk": 1,
@@ -6749,6 +6749,4 @@
     "analisis": "La empresa no es eficiente en la gestion de sus costos y gastos. Valor de referencia:0.2"
   }
 }
-
-
 ]
