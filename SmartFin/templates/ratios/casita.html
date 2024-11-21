@@ -18,7 +18,7 @@
                 <label for="balanceSelect">Seleccione el Balance</label>
                 <select name="idBalance" id="balanceSelect" class="form-control">
                     {% for balance in balances %}
-                    <option value="{{ balance.idBalance }}">{{ balance.idBalance }}</option>
+                    <option value="{{ balance.idBalance }}">{{ balance.nombre }}</option>
                     {% endfor %}
                 </select>
             </div>
