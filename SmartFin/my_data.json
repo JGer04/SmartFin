@@ -713,6 +713,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "abn3hs0q2w8o6s2fqbshhkg2842vsmz3",
+  "fields": {
+    "session_data": ".eJxVjbtOw0AURP9la2R5X8SbjkCZdNBdyZq9e40NjtdaOygS4t9xpBTQzpk5861aXNa-vSxS2iGpvTLq4W8WwZ8y3UD6wPSeK87TWoZY3SrVnS7VKScZD_fuP0GPpd_WXLO3TcBOe6PhPFyEBKlj0HZXQ2KyzkRvYX1qou_ksWuMc0E7DXBXb1IU7oev3MqVZdyUz3uit-1iIUKcpBA9zfMLVhAdM2MkepXzTLSeZx6tKSZc1c8vnGhRDg:1tE07N:O4-0DPa79zw5zxVZai432vHqfOAalJpCjk1_8MdU_VU",
+    "expire_date": "2024-12-05T05:52:41.684Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "dpzce9pa64fo8axjsyuegy0jlw81675m",
   "fields": {
     "session_data": ".eJxVjctugzAURP_F6wrZJgaTXR7LZJfuroSufU1Ma7DFo6pa5d8DEotkO2fmzD-rcZ58PY9uqFtieybYx2tm0H67fgX0hf09Zjb209CabK1kGx2zayQXjlv3TeBx9Ms6p0obLgurcxINUVUYIlVwxR0XZakLKZtKcXTSljlqaYlyJXijlTJGiN0ixcH69ifW7te6sChPe4DP5WIEwBCwBzikdMYJAS7RYgC4uS4BTF0Scv5rfJLs8QR1bFDJ:1tCXru:Cy1xwWOZqpbA-2ZTSCcgDEooT2ruHzcFTFy6IT3K68I",
@@ -4808,6 +4816,106 @@
   }
 },
 {
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 438,
+  "fields": {
+    "idBalance": 2,
+    "codigo": "tac",
+    "nombre": "Total activo circulante",
+    "monto": 78618364.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 439,
+  "fields": {
+    "idBalance": 2,
+    "codigo": "tpc",
+    "nombre": "Total pasivo circulante",
+    "monto": 85620510.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 440,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "tac",
+    "nombre": "Total activo circulante",
+    "monto": 78618364.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 441,
+  "fields": {
+    "idBalance": 3,
+    "codigo": "tpc",
+    "nombre": "Total pasivo circulante",
+    "monto": 85620510.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 442,
+  "fields": {
+    "idBalance": 6,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 444,
+  "fields": {
+    "idBalance": 5,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 445,
+  "fields": {
+    "idBalance": 4,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 446,
+  "fields": {
+    "idBalance": 10,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 447,
+  "fields": {
+    "idBalance": 11,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
+  "model": "cuentaBalance.cuentabalance",
+  "pk": 448,
+  "fields": {
+    "idBalance": 12,
+    "codigo": "1108",
+    "nombre": "Otros Activos financieros",
+    "monto": 797910.0
+  }
+},
+{
   "model": "cuentaResultado.cuentaresultado",
   "pk": 1,
   "fields": {
@@ -5405,266 +5513,6 @@
     "codigo": "un",
     "nombre": "Utilidad neta",
     "monto": 3430105.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 61,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "11",
-    "nombre": "Activos Corrientes",
-    "monto": 14345672.45
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 62,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1101",
-    "nombre": "Caja y Bancos",
-    "monto": 5123478.56
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 63,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1103",
-    "nombre": "Cuentas por Cobrar",
-    "monto": 5876234.11
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 64,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1105",
-    "nombre": "Inventarios",
-    "monto": 2987923.78
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 65,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "tac",
-    "nombre": "Total activo circulante",
-    "monto": 26543232.56
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 66,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1106",
-    "nombre": "Otros Activos Corrientes",
-    "monto": 1358123.56
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 67,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "12",
-    "nombre": "Activos No Corrientes",
-    "monto": 27123456.78
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 68,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1201",
-    "nombre": "Propiedades, Planta y Equipo",
-    "monto": 20789234.12
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 69,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1203",
-    "nombre": "Inversiones a Largo Plazo",
-    "monto": 3978123.45
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 70,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1204",
-    "nombre": "Activos Intangibles",
-    "monto": 2456789.21
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 71,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "1205",
-    "nombre": "Otros Activos No Corrientes",
-    "monto": 899310.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 72,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "tc",
-    "nombre": "Total Activos",
-    "monto": 41469129.34
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 73,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "21",
-    "nombre": "Pasivos Corrientes",
-    "monto": 6456789.11
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 74,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2101",
-    "nombre": "Cuentas por Pagar",
-    "monto": 2567891.12
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 75,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2102",
-    "nombre": "Obligaciones Financieras (Corto)",
-    "monto": 3789345.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 76,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2103",
-    "nombre": "Provisiones",
-    "monto": 545552.99
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 77,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "tpc",
-    "nombre": "Total pasivo circulante",
-    "monto": 6987123.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 78,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2014",
-    "nombre": "Otros Pasivos Corrientes",
-    "monto": 198478.23
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 79,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2015",
-    "nombre": "Pasivos No Corrientes",
-    "monto": 11234567.89
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 80,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2016",
-    "nombre": "Obligaciones Financieras (Largo)",
-    "monto": 8567123.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 81,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "2017",
-    "nombre": "Provisiones",
-    "monto": 3298456.0
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 82,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "tp",
-    "nombre": "Total Pasivos",
-    "monto": 18456234.89
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 83,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "tpa",
-    "nombre": "Patrimonio",
-    "monto": 22912894.45
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 84,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "3101",
-    "nombre": "Capital Social",
-    "monto": 11567312.56
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 85,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "3102",
-    "nombre": "Utilidades Retenidas",
-    "monto": 11345581.89
-  }
-},
-{
-  "model": "cuentaResultado.cuentaresultado",
-  "pk": 86,
-  "fields": {
-    "idResultado": 5,
-    "codigo": "Tpmpa",
-    "nombre": "Total Pasivo más Patrimonio",
-    "monto": 41469129.34
   }
 },
 {
@@ -6268,6 +6116,606 @@
   }
 },
 {
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 173,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "41",
+    "nombre": "Ingresos Ordinarios",
+    "monto": 140123567.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 174,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "42",
+    "nombre": "Otros Ingresos",
+    "monto": 3912345.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 175,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "43",
+    "nombre": "COSTO DE VENTAS",
+    "monto": 112678456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 176,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "ub",
+    "nombre": "Utilidad Bruta",
+    "monto": 31357456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 177,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5101",
+    "nombre": "Gastos de Distribución",
+    "monto": 9123789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 178,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5102",
+    "nombre": "Gastos de Administración",
+    "monto": 5034567.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 179,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5103",
+    "nombre": "Gastos de Personal",
+    "monto": 6987654.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 180,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5104",
+    "nombre": "Gastos de Depreciación y Amortización",
+    "monto": 3567890.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 181,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "uo",
+    "nombre": "Utilidad de Operación",
+    "monto": 6643556.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 182,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5201",
+    "nombre": "Ingresos Financieros",
+    "monto": 1345678.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 183,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5202",
+    "nombre": "Gastos Financieros",
+    "monto": 1234567.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 184,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "5203",
+    "nombre": "Otros Gastos",
+    "monto": 0.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 185,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "ua",
+    "nombre": "Utilidad antes de ISR",
+    "monto": 6754667.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 186,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "54",
+    "nombre": "Impuestos",
+    "monto": 3345678.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 187,
+  "fields": {
+    "idResultado": 5,
+    "codigo": "un",
+    "nombre": "Utilidad neta",
+    "monto": 3408989.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 189,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "41",
+    "nombre": "Ingresos Ordinarios",
+    "monto": 128456789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 190,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "42",
+    "nombre": "Otros Ingresos",
+    "monto": 3123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 191,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "43",
+    "nombre": "COSTO DE VENTAS",
+    "monto": 103678912.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 192,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "ub",
+    "nombre": "Utilidad Bruta",
+    "monto": 27901333.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 193,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5101",
+    "nombre": "Gastos de Distribución",
+    "monto": 8123789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 194,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5102",
+    "nombre": "Gastos de Administración",
+    "monto": 4987654.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 195,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5103",
+    "nombre": "Gastos de Personal",
+    "monto": 6543210.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 196,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5104",
+    "nombre": "Gastos de Depreciación y Amortización",
+    "monto": 3210987.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 197,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "uo",
+    "nombre": "Utilidad de Operación",
+    "monto": 5035693.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 198,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5201",
+    "nombre": "Ingresos Financieros",
+    "monto": 987654.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 199,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5202",
+    "nombre": "Gastos Financieros",
+    "monto": 876543.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 200,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "5203",
+    "nombre": "Otros Gastos",
+    "monto": 0.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 201,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "ua",
+    "nombre": "Utilidad antes de ISR",
+    "monto": 5146804.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 202,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "54",
+    "nombre": "Impuestos",
+    "monto": 2543210.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 203,
+  "fields": {
+    "idResultado": 10,
+    "codigo": "un",
+    "nombre": "Utilidad neta",
+    "monto": 2603594.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 204,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "41",
+    "nombre": "Ingresos Ordinarios",
+    "monto": 135678912.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 205,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "42",
+    "nombre": "Otros Ingresos",
+    "monto": 3456789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 206,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "43",
+    "nombre": "COSTO DE VENTAS",
+    "monto": 108123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 207,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "ub",
+    "nombre": "Utilidad Bruta",
+    "monto": 30012245.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 208,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5101",
+    "nombre": "Gastos de Distribución",
+    "monto": 8456789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 209,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5102",
+    "nombre": "Gastos de Administración",
+    "monto": 5123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 210,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5103",
+    "nombre": "Gastos de Personal",
+    "monto": 6789123.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 211,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5104",
+    "nombre": "Gastos de Depreciación y Amortización",
+    "monto": 3567123.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 212,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "uo",
+    "nombre": "Utilidad de Operación",
+    "monto": 6075754.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 213,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5201",
+    "nombre": "Ingresos Financieros",
+    "monto": 1123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 214,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5202",
+    "nombre": "Gastos Financieros",
+    "monto": 987654.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 215,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "5203",
+    "nombre": "Otros Gastos",
+    "monto": 0.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 216,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "ua",
+    "nombre": "Utilidad antes de ISR",
+    "monto": 6211556.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 217,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "54",
+    "nombre": "Impuestos",
+    "monto": 2987654.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 218,
+  "fields": {
+    "idResultado": 11,
+    "codigo": "un",
+    "nombre": "Utilidad neta",
+    "monto": 3223902.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 219,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "41",
+    "nombre": "Ingresos Ordinarios",
+    "monto": 140123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 220,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "42",
+    "nombre": "Otros Ingresos",
+    "monto": 3789012.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 221,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "43",
+    "nombre": "COSTO DE VENTAS",
+    "monto": 110789123.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 222,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "ub",
+    "nombre": "Utilidad Bruta",
+    "monto": 33123345.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 223,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5101",
+    "nombre": "Gastos de Distribución",
+    "monto": 8789012.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 224,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5102",
+    "nombre": "Gastos de Administración",
+    "monto": 5456789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 225,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5103",
+    "nombre": "Gastos de Personal",
+    "monto": 7123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 226,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5104",
+    "nombre": "Gastos de Depreciación y Amortización",
+    "monto": 3789123.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 227,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "uo",
+    "nombre": "Utilidad de Operación",
+    "monto": 8368965.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 228,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5201",
+    "nombre": "Ingresos Financieros",
+    "monto": 1234567.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 229,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5202",
+    "nombre": "Gastos Financieros",
+    "monto": 1123456.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 230,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "5203",
+    "nombre": "Otros Gastos",
+    "monto": 0.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 231,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "ua",
+    "nombre": "Utilidad antes de ISR",
+    "monto": 8480076.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 232,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "54",
+    "nombre": "Impuestos",
+    "monto": 3456789.0
+  }
+},
+{
+  "model": "cuentaResultado.cuentaresultado",
+  "pk": 233,
+  "fields": {
+    "idResultado": 12,
+    "codigo": "un",
+    "nombre": "Utilidad neta",
+    "monto": 5023287.0
+  }
+},
+{
   "model": "empresa.empresa",
   "pk": 5,
   "fields": {
@@ -6428,7 +6876,7 @@
   "model": "usuario.usuario",
   "pk": 2,
   "fields": {
-    "last_login": null,
+    "last_login": "2024-11-21T04:44:29.577Z",
     "nom_usuario": "Abner",
     "password": "pbkdf2_sha256$600000$kTn5EafJvGz4xmL5S89zzV$BaBxLF3iidU+Ee9XarhRLKyPpAGofAsireSaKYU85ww="
   }
@@ -6602,8 +7050,8 @@
     "nombre": "Razón de liquidez corriente o razón de circulante",
     "subseccion": 5,
     "seccion": 1,
-    "valor": "1.09",
-    "analisis": "La empresa tiene menor capacidad de cubrir sus deudas a corto plazo valor de referencia:1.9"
+    "valor": "3.48",
+    "analisis": "La empresa tiene mayor capacidad de cubrir sus deudas a corto plazo. valor de referencia:1.9"
   }
 },
 {
@@ -6613,7 +7061,7 @@
     "nombre": "Razón de liquidez rápida o prueba ácida",
     "subseccion": 5,
     "seccion": 1,
-    "valor": "1.01",
+    "valor": "3.14",
     "analisis": "La empresa puede cubrir sus pasivos a corto plazo sin depender de la venta de inventarios. Valor de referencia:1"
   }
 },
@@ -6624,7 +7072,7 @@
     "nombre": "Razón de activo neto de trabajo a activos totales",
     "subseccion": 5,
     "seccion": 1,
-    "valor": "0.03",
+    "valor": "0.44",
     "analisis": "En la empresa una parte de los activos se financia con pasivos a corto plazo. Valor de referencia:0.5"
   }
 },
@@ -6635,7 +7083,7 @@
     "nombre": "Razón de efectivo",
     "subseccion": 5,
     "seccion": 1,
-    "valor": "0.09",
+    "valor": "0.64",
     "analisis": "la empresa cuenta con dificultad para hacerle frente a sus obligaciones inmediatas debido a la carencia de efectivo disponible. Valor de referencia:0.9"
   }
 },
@@ -6646,7 +7094,7 @@
     "nombre": "Razón de rotación de inventario",
     "subseccion": 1,
     "seccion": 2,
-    "valor": "22.37",
+    "valor": "44.32",
     "analisis": "La empresa está vendiendo y reponiendo su inventario rapidamente. Valor de referencia:15"
   }
 },
@@ -6657,7 +7105,7 @@
     "nombre": "Razón de días de inventario",
     "subseccion": 1,
     "seccion": 2,
-    "valor": "16.31",
+    "valor": "8.24",
     "analisis": "La empresa no está vendiendo ni reponiendo su inventario rapidamente. Valor de referencia:20"
   }
 },
@@ -6668,8 +7116,8 @@
     "nombre": "Razón de rotación de cuentas por cobrar",
     "subseccion": 2,
     "seccion": 2,
-    "valor": "2.93",
-    "analisis": "la empresa esta recolectando sus cuentas por cobrar lentamente. Valor de referencia:4"
+    "valor": "25.34",
+    "analisis": "la empresa esta recolectando sus cuentas por cobrar rapidamente. Valor de referencia:4"
   }
 },
 {
@@ -6679,8 +7127,8 @@
     "nombre": "Razón de período medio de cobranza",
     "subseccion": 2,
     "seccion": 2,
-    "valor": "124.63",
-    "analisis": "La empresa tiene una gestion estricta de cobro. Valor de referencia:100"
+    "valor": "14.40",
+    "analisis": "La empresa tiene una gestion flexible de cobro. Valor de referencia:100"
   }
 },
 {
@@ -6690,8 +7138,8 @@
     "nombre": "Razón de rotación de cuentas por pagar",
     "subseccion": 2,
     "seccion": 2,
-    "valor": "2.34",
-    "analisis": "La empresa esta pagando lentamente sus deudas y con menos frecuencia a sus proveedores. Valor de referencia:3"
+    "valor": "50.78",
+    "analisis": "La empresa esta pagando rapidamente sus deudas y con mas frecuencia a sus proveedores. Valor de referencia:3"
   }
 },
 {
@@ -6701,8 +7149,8 @@
     "nombre": "Razón de período medio de pago",
     "subseccion": 2,
     "seccion": 2,
-    "valor": "155.89",
-    "analisis": "La empresa tiene una cantidad media de dias en ejecutar sus pagos a sus proveedores. Valor de referencia:50"
+    "valor": "7.19",
+    "analisis": "La empresa tiene una cantidad alta de dias en ejecutar sus pagos a sus proveedores. Valor de referencia:50"
   }
 },
 {
@@ -6712,8 +7160,8 @@
     "nombre": "Rotación de activos totales",
     "subseccion": 3,
     "seccion": 2,
-    "valor": "0.79",
-    "analisis": "La empresa no está utilizando sus activos de manera eficiente. Valor de referencia:1"
+    "valor": "3.69",
+    "analisis": "La empresa esta utilizando sus activos de manera eficiente. Valor de referencia:1"
   }
 },
 {
@@ -6723,8 +7171,8 @@
     "nombre": "Rotación de activos fijos",
     "subseccion": 3,
     "seccion": 2,
-    "valor": "1.22",
-    "analisis": "la empresa no está usando de manera eficiente los inmuebles maquinaria con respecto a las ventas generadas. Valor de referencia:2"
+    "valor": "10.87",
+    "analisis": "La empresa está usando de manera eficiente los inmuebles maquinaria con respecto a las ventas generadas. Valor de referencia:2"
   }
 },
 {

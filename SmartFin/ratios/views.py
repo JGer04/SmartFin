@@ -133,7 +133,7 @@ def calcular_ratios(request, id_balance):
     if tac and tpc and tpc.monto != 0:
         ratio_valor = tac.monto / tpc.monto
         if ratio_valor >= 1.9:
-            mensajes.append('La empresa tiene mayor capacidad de cubrir sus deudas a corto plazo. valor de referencia:1.9')
+            mensajes=('La empresa tiene mayor capacidad de cubrir sus deudas a corto plazo. valor de referencia:1.9')
             
         elif ratio_valor < 1.9:
             mensajes=('La empresa tiene menor capacidad de cubrir sus deudas a corto plazo valor de referencia:1.9')
@@ -250,7 +250,7 @@ def calcular_ratios(request, id_balance):
     vn = CuentaResultado.objects.get(idResultado=id_balance, codigo='42')
     vn1 = CuentaResultado.objects.get(idResultado=id_balance, codigo='41')
     vn.monto = vn.monto + vn1.monto
-    cc = CuentaBalance.objects.get(idBalance=id_balance, codigo='1102') 
+    cc = CuentaBalance.objects.get(idBalance=id_balance, codigo='1103') 
     ratio_valor = None
     if vn and cc and cc.monto != 0 and id_balance==1:
         ratio_valor = vn.monto / cc.monto
@@ -263,7 +263,7 @@ def calcular_ratios(request, id_balance):
         guardar.valor = ratio_valor
         guardar.save()
     elif vn and cc and cc.monto != 0 and id_balance!=1:
-        aniopas = CuentaBalance.objects.get(idBalance=id_balance-1, codigo='1102')
+        aniopas = CuentaBalance.objects.get(idBalance=id_balance-1, codigo='1103')
         ratio_valor = vn.monto / ((cc.monto+aniopas.monto)/2)
         if ratio_valor >= 4:
             mensajes=('la empresa esta recolectando sus cuentas por cobrar rapidamente. Valor de referencia:4')
@@ -313,7 +313,7 @@ def calcular_ratios(request, id_balance):
         aniopas = CuentaBalance.objects.get(idBalance=id_balance-1, codigo='1105')
         anicp = CuentaBalance.objects.get(idBalance=id_balance-1, codigo='2101')
 
-        ratio_valor = cv.monto + (inv - aniopas)
+        ratio_valor = cv.monto + (inv.monto - aniopas.monto)
         ratio_valor = ratio_valor/((cp.monto + anicp.monto)/2)
         if ratio_valor >= 3:
             mensajes=('La empresa esta pagando rapidamente sus deudas y con mas frecuencia a sus proveedores. Valor de referencia:3')
